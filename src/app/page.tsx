@@ -803,7 +803,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-3 md:py-5" role="contentinfo">
+      <footer
+        className="border-t py-3 md:py-5 bg-background/95 "
+        role="contentinfo"
+      >
         <div className="container flex flex-col justify-center items-center mx-auto gap-4 text-center">
           <div className="flex gap-1">
             Made with
