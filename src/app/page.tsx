@@ -135,7 +135,7 @@ export default function Home() {
       </header>
 
       <main
-        className="container py-10 space-y-20 mx-auto px-2 md:px-0"
+        className="container py-10 space-y-20 mx-auto px-2"
         id="main-content"
       >
         {/* Hero Section */}
