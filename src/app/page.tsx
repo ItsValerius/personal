@@ -388,9 +388,9 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-muted-foreground">
-                      Abschlussarbeit: "Konzeption und Realisierung einer
+                      Abschlussarbeit: &quot;Konzeption und Realisierung einer
                       skalierbaren Integrations- und Transformationsarchitektur
-                      für digitales Marketing"
+                      für digitales Marketing&quot;
                     </p>
                   </div>
                 </CardContent>
