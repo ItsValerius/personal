@@ -19,59 +19,35 @@ export function MobileNav() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           aria-label="Menü öffnen"
         >
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[250px] sm:w-[300px]">
-        <div className="flex flex-col gap-6 py-6">
-          <nav className="flex flex-col gap-4" aria-label="Mobile Navigation">
+      <SheetContent
+        side="left"
+        className="w-[250px] sm:w-[300px] px-6 py-8 flex flex-col gap-8"
+      >
+        <nav className="flex flex-col gap-5" aria-label="Mobile Navigation">
+          {[
+            { href: "#about", label: "Über mich" },
+            { href: "#experience", label: "Erfahrung" },
+            { href: "#education", label: "Bildung" },
+            { href: "#skills", label: "Kenntnisse" },
+            { href: "#interests", label: "Interessen" },
+            { href: "#projects", label: "Projekte" },
+          ].map((item) => (
             <Link
-              href="#about"
-              className="text-base font-medium hover:text-primary transition-colors"
+              key={item.href}
+              href={item.href}
               onClick={handleLinkClick}
+              className="text-base font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              Über mich
+              {item.label}
             </Link>
-            <Link
-              href="#experience"
-              className="text-base font-medium hover:text-primary transition-colors"
-              onClick={handleLinkClick}
-            >
-              Erfahrung
-            </Link>
-            <Link
-              href="#education"
-              className="text-base font-medium hover:text-primary transition-colors"
-              onClick={handleLinkClick}
-            >
-              Bildung
-            </Link>
-            <Link
-              href="#skills"
-              className="text-base font-medium hover:text-primary transition-colors"
-              onClick={handleLinkClick}
-            >
-              Kenntnisse
-            </Link>
-            <Link
-              href="#interests"
-              className="text-base font-medium hover:text-primary transition-colors"
-              onClick={handleLinkClick}
-            >
-              Interessen
-            </Link>
-            <Link
-              href="#projects"
-              className="text-base font-medium hover:text-primary transition-colors"
-              onClick={handleLinkClick}
-            >
-              Projekte
-            </Link>
-          </nav>
-        </div>
+          ))}
+        </nav>
       </SheetContent>
     </Sheet>
   );

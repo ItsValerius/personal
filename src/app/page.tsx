@@ -112,7 +112,7 @@ export default function Home() {
               id="hero-heading"
               className="text-4xl md:text-6xl font-bold tracking-tight"
             >
-              Hi! Ich bin <span className="text-primary">Valentin</span>
+              Hi! Ich bin <span className="text-primary">Valentin</span> :)
             </h1>
             <p className="text-xl text-muted-foreground text-center md:text-start">
               Full Stack Entwickler mit Fokus auf PHP/Laravel und
@@ -155,6 +155,7 @@ export default function Home() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 256px, 320px"
               />
             </div>
           </div>
