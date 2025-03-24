@@ -26,7 +26,7 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent
-        side="left"
+        side="right"
         className="w-[250px] sm:w-[300px] px-6 py-8 flex flex-col gap-8"
       >
         <nav className="flex flex-col gap-5" aria-label="Mobile Navigation">
