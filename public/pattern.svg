@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none">
+  <defs>
+    <pattern id="squiggle" patternUnits="userSpaceOnUse" width="120" height="120">
+      <path d="M0,60 C40,90 80,30 120,60" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#squiggle)" />
+</svg>
