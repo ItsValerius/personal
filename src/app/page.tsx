@@ -18,50 +18,24 @@ import {
   Moon,
   Sun,
   ArrowUpRight,
+  SunIcon,
+  MoonIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "lucide-react";
 import { basketball } from "@lucide/lab";
-import { useEffect, useState } from "react";
+import React from "react";
 import { MobileNav } from "@/components/mobile-nav";
+import { useTheme } from "next-themes";
 
 export default function Home() {
-  // State for dark mode toggle
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Effect to initialize dark mode based on user preference
-  useEffect(() => {
-    // Check for user preference in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-    setIsDarkMode(!isDarkMode);
-  };
-
+  const { setTheme, resolvedTheme } = useTheme();
+  const toggleTheme = React.useCallback(() => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  }, [resolvedTheme, setTheme]);
   return (
-    <div
-      className={`min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed ${
-        isDarkMode ? "dark" : ""
-      }`}
-    >
+    <div className="min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed">
       {/* Skip to content link for keyboard users */}
       <a href="#about" className="skip-to-content">
         Zum Inhalt springen
@@ -115,20 +89,12 @@ export default function Home() {
           {/* Dark mode toggle */}
           <Button
             variant="ghost"
-            size="icon"
-            onClick={toggleDarkMode}
-            aria-pressed={isDarkMode}
-            aria-label={
-              isDarkMode
-                ? "Zum hellen Modus wechseln"
-                : "Zum dunklen Modus wechseln"
-            }
+            className="group/toggle h-8 w-8 px-0"
+            onClick={toggleTheme}
           >
-            {isDarkMode ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
+            <SunIcon className="hidden [html.dark_&]:block" />
+            <MoonIcon className="hidden [html.light_&]:block" />
+            <span className="sr-only">Toggle theme</span>
           </Button>
           <MobileNav />
         </div>
