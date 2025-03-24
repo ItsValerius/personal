@@ -1,33 +1,31 @@
 "use client";
 
+import { MobileNav } from "@/components/mobile-nav";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { basketball } from "@lucide/lab";
 import {
+  ArrowUpRight,
+  BookOpen,
+  Briefcase,
+  Code,
+  Gamepad2,
   Github,
+  GraduationCap,
+  Heart,
+  Icon,
+  Languages,
   Linkedin,
   Mail,
   MapPin,
-  Briefcase,
-  GraduationCap,
-  Code,
-  BookOpen,
-  Gamepad2,
-  Languages,
-  Heart,
-  Moon,
-  Sun,
-  ArrowUpRight,
-  SunIcon,
   MoonIcon,
+  SunIcon,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "lucide-react";
-import { basketball } from "@lucide/lab";
 import React from "react";
-import { MobileNav } from "@/components/mobile-nav";
-import { useTheme } from "next-themes";
 
 export default function Home() {
   const { setTheme, resolvedTheme } = useTheme();
