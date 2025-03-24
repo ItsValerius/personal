@@ -99,6 +99,12 @@ export default function Home() {
               Kenntnisse
             </Link>
             <Link
+              href="#interests"
+              className="text-sm font-medium hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              Interessen
+            </Link>
+            <Link
               href="#projects"
               className="text-sm font-medium hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
@@ -230,11 +236,22 @@ export default function Home() {
                       className="h-5 w-5 text-primary"
                       aria-hidden="true"
                     />
-                    <span>Erkelenz, Deutschland</span>
+                    <Link
+                      className="underline text-primary"
+                      href="https://www.google.com/maps/search/?api=1&query=erkelenz"
+                      target="_blank"
+                    >
+                      Erkelenz, Deutschland
+                    </Link>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
-                    <span>kueck.valentin@googlemail.com</span>
+                    <Link
+                      className="underline text-primary"
+                      href="mailto:kueck.valentin@googlemail.com"
+                    >
+                      kueck.valentin@googlemail.com
+                    </Link>
                   </div>
                   <div className="flex items-center gap-2">
                     <Briefcase
@@ -258,7 +275,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="space-y-2">
               <Badge variant="outline" className="text-sm font-medium">
-                Praktische Erfahrung
+                Erfahrung
               </Badge>
               <h2
                 id="experience-heading"
@@ -356,7 +373,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="space-y-2">
               <Badge variant="outline" className="text-sm font-medium">
-                Bildungsweg
+                Bildung
               </Badge>
               <h2
                 id="education-heading"
@@ -464,6 +481,7 @@ export default function Home() {
                       <Badge className="px-3 py-1">Node.js</Badge>
                       <Badge className="px-3 py-1">MySQL</Badge>
                       <Badge className="px-3 py-1">PostgreSQL</Badge>
+                      <Badge className="px-3 py-1">Redis</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -643,7 +661,7 @@ export default function Home() {
                 id="projects-heading"
                 className="text-3xl font-bold tracking-tight"
               >
-                Meine Arbeiten
+                Meine Arbeit
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -704,6 +722,52 @@ export default function Home() {
                         </Link>
                       </Button>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold">
+                      CBIS Projekt - Billsplit
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Entwicklung einer Fullstack App zum hochladen und
+                      aufteilen von Rechnungen im Rahmen der Veranstaltung
+                      &quot;Cloud-basierte Informationssysteme&quot;
+                    </p>
+                    <div
+                      className="flex flex-wrap gap-2"
+                      aria-label="Verwendete Technologien"
+                    >
+                      {[
+                        "Next.js",
+                        "Tailwindcss",
+                        "Drizzle",
+                        "Postgres",
+                        "Auth.js",
+                        "Shadcn/ui",
+                        "Redis",
+                      ].map((tag) => (
+                        <Badge key={tag} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="hover:bg-primary group"
+                    >
+                      <Link
+                        className=" flex gap-1 "
+                        href="https://github.com/ItsValerius/cbis"
+                        target="_blank"
+                      >
+                        Github
+                        <ArrowUpRight className="w-6 h-6 group-hover:translate-x-0.5 duration-200 group-hover:-translate-y-0.5 transition-transform" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
