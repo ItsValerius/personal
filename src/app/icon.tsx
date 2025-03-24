@@ -12,30 +12,40 @@ export default function Icon() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <circle
-          cx="32"
-          cy="32"
-          r="30"
-          fill="#fff6ea"
-          stroke="#fff6ea"
-          strokeWidth="2"
-        />
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="32"
+            cy="32"
+            r="30"
+            fill="#fff6ea"
+            stroke="#fff6ea"
+            strokeWidth="2"
+          />
 
-        <path
-          d="M20 20L32 44L44 20"
-          stroke="#cc7900"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+          <path
+            d="M20 20L32 44L44 20"
+            stroke="#cc7900"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
     ),
     // ImageResponse options
     {
