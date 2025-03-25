@@ -25,8 +25,8 @@ export default async function Image() {
         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
           <img
             src={
-              `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` ||
-              `http://localhost:${process.env.PORT || 3000}` + "/me.png"
+              (`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` ||
+                `http://localhost:${process.env.PORT || 3000}`) + "/me.png"
             }
             height="128"
             width="128"
