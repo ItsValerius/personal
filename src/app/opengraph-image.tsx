@@ -27,7 +27,7 @@ export default async function Image() {
             src={
               (process.env.VERCEL_PROJECT_PRODUCTION_URL
                 ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-                : `http://localhost:${process.env.PORT || 3000}`) + "/me.png"
+                : `http://localhost:${process.env.PORT || 3000}`) + "/me.jpg"
             }
             height="128"
             width="128"
