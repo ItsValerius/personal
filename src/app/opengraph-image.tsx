@@ -22,7 +22,7 @@ export default async function Image() {
           backgroundColor: "white",
         }}
       >
-        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
+        <div className="flex relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
           <img
             src={
               (process.env.VERCEL_PROJECT_PRODUCTION_URL
