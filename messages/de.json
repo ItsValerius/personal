@@ -1,0 +1,115 @@
+{
+    "nav": {
+        "about": "Über mich",
+        "experience": "Erfahrung",
+        "education": "Bildung",
+        "skills": "Kenntnisse",
+        "interests": "Interessen",
+        "projects": "Projekte"
+    },
+    "hero": {
+        "title": "Hi! Ich bin ",
+        "subtitle": "Full Stack Entwickler mit Fokus auf PHP/Laravel und JavaScript/TypeScript"
+    },
+    "about": {
+        "title": "Persönliche Informationen",
+        "description": "Ich bin ein Full Stack Entwickler mit Erfahrung in der Entwicklung von Webanwendungen mit PHP/Laravel und JavaScript/TypeScript. Derzeit studiere ich Wirtschaftsinformatik an der FH Aachen und arbeite als Werkstudent bei <link>Johnny Bytes GmbH.</link>",
+        "location": "Erkelenz, Deutschland",
+        "nav": "Über mich",
+        "position": "Werkstudent Software Engineer"
+    },
+    "experience": {
+        "title": "Mein beruflicher Werdegang",
+        "nav": "Erfahrung",
+        "jb": {
+            "title": "Werkstudent Software Engineer/ Full Stack Entwickler",
+            "company": "Johnny Bytes GmbH (Köln, DE)",
+            "start": "seit September 2023",
+            "tasks": {
+                "task_1": "Wartung und Pflege bestehender Systeme im Backend (Laravel) und Frontend (Vue, Blade, JQuery, SCSS)",
+                "task_2": "Entwicklung von Backend-Systemen und Admin-Panels (Laravel, Filament)"
+            }
+        },
+        "rbl": {
+            "title": "Werkstudent DOOH IT & Administration",
+            "company": "RBL Media GmbH (Erkelenz, DE)",
+            "start": "Oktober 2021 - September 2023",
+            "tasks": {
+                "task_1": "Sicherstellung des Betriebs bestehender Digitaler Außenwerbeflächen",
+                "task_2": "Support bei Errichtung neuer Werbeflächen",
+                "task_3": "Entwicklung eines Backends zur Integration von MoWaS Warnmeldungen"
+            }
+        }
+    },
+    "education": {
+        "title": "Meine Ausbildung",
+        "nav": "Bildung",
+        "bachelor": {
+            "title": "Studium der Wirtschaftsinformatik (Bachelor of Science)",
+            "school": "FH Aachen - University of Applied Sciences",
+            "graduation": "voraussichtlich Mai 2025",
+            "thesis": "Abschlussarbeit: \"Konzeption und Realisierung einer skalierbaren Integrations- und Transformationsarchitektur für digitales Marketing\""
+        },
+        "highschool": {
+            "title": "Abitur",
+            "school": "Cusanus Gymnasium Erkelenz",
+            "graduation": "Mai 2018",
+            "subjects": "Leistungskurse: Englisch, Geschichte"
+        }
+    },
+    "skills": {
+        "title": "Meine Fähigkeiten",
+        "backend": "Backend Entwicklung",
+        "frontend": "Frontend Entwicklung",
+        "others": "Weitere Technologien",
+        "languages": "Sprachen",
+        "nav": "Kenntnisse",
+        "languageBadges": {
+            "german": "Deutsch (Muttersprache)",
+            "english": "Englisch (fließend)"
+        }
+    },
+    "interests": {
+        "title": "Was mich begeistert",
+        "nav": "Interessen",
+        "items": {
+            "code": {
+                "title": "Programmieren",
+                "description": "Entwicklung von Webanwendungen und Erlernen neuer Technologien."
+            },
+            "basketball": {
+                "title": "Basketball",
+                "description": "Seit mehr als 10 Jahren aktiv im lokalen Verein."
+            },
+            "reading": {
+                "title": "Lesen",
+                "description": "Bücher über Science-Fiction, Fantasy oder was mir gerade so gefällt."
+            },
+            "gaming": {
+                "title": "Videospiele",
+                "description": "Kompetitive Online-Games oder entspannte Aufbauspiele."
+            }
+        }
+    },
+    "projects": {
+        "title": "Meine Arbeit",
+        "nav": "Projekte",
+        "kg": {
+            "title": "Arbeitsplan für Karnevalsgesellschaft",
+            "description": "Konzeption und Realisierung einer Platform zur Organisation von Arbeitsplänen"
+        },
+        "cbis": {
+            "title": "CBIS Projekt - Billsplit",
+            "description": "Entwicklung einer Fullstack App zum Hochladen und Aufteilen von Rechnungen im Rahmen der Veranstaltung \"Cloud-basierte Informationssysteme\""
+        },
+        "mowas": {
+            "title": "MoWaS Integration",
+            "description": "Entwicklung eines Backends zur Integration von MoWaS Warnmeldungen für digitale Außenwerbeflächen",
+            "paragraph": "Abgeschlossen während der Tätigkeit bei RBL Media GmbH"
+        }
+    },
+    "footer": {
+        "made_with": "Made with",
+        "love": "Liebe"
+    }
+}

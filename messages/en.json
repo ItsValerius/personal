@@ -1,0 +1,115 @@
+{
+    "nav": {
+        "about": "About Me",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "interests": "Interests",
+        "projects": "Projects"
+    },
+    "hero": {
+        "title": "Hi! I am ",
+        "subtitle": "Full stack developer focused on PHP/Laravel and JavaScript/TypeScript"
+    },
+    "about": {
+        "title": "Personal Information",
+        "description": "I'm a full stack developer with experience in building web applications using PHP/Laravel and JavaScript/TypeScript. I'm currently studying Business Informatics at FH Aachen. I am also a working student at <link> Johnny Bytes GmbH.</link>",
+        "location": "Erkelenz, Germany",
+        "nav": "About Me",
+        "position": "Working student Software Engineer"
+    },
+    "experience": {
+        "title": "My Professional Experience",
+        "nav": "Experience",
+        "jb": {
+            "title": "Working Student Software Engineer / Full Stack Developer",
+            "company": "Johnny Bytes GmbH (Cologne, DE)",
+            "start": "since September 2023",
+            "tasks": [
+                "Maintenance and upkeep of existing backend (Laravel) and frontend (Vue, Blade, JQuery, SCSS) systems",
+                "Development of backend systems and admin panels (Laravel, Filament)"
+            ]
+        },
+        "rbl": {
+            "title": "Working Student DOOH IT & Administration",
+            "company": "RBL Media GmbH (Erkelenz, DE)",
+            "start": "October 2021 - September 2023",
+            "tasks": [
+                "Ensuring operation of existing digital outdoor advertising displays",
+                "Support in setting up new advertising spaces",
+                "Developed a backend to integrate MoWaS warning messages"
+            ]
+        }
+    },
+    "education": {
+        "title": "My Education",
+        "nav": "Education",
+        "bachelor": {
+            "title": "Bachelor's in Business Informatics (B.Sc.)",
+            "school": "FH Aachen - University of Applied Sciences",
+            "graduation": "expected May 2025",
+            "thesis": "Thesis: \"Design and implementation of a scalable integration and transformation architecture for digital marketing\""
+        },
+        "highschool": {
+            "title": "High School Diploma",
+            "school": "Cusanus Gymnasium Erkelenz",
+            "graduation": "May 2018",
+            "subjects": "Advanced courses: English, History"
+        }
+    },
+    "skills": {
+        "title": "My Skills",
+        "nav": "Skills",
+        "backend": "Backend Development",
+        "frontend": "Frontend Development",
+        "others": "Other Technologies",
+        "languages": "Languages",
+        "languageBadges": {
+            "german": "German (native)",
+            "english": "English (fluent)"
+        }
+    },
+    "interests": {
+        "title": "What I'm passionate about",
+        "nav": "Interests",
+        "items": {
+            "code": {
+                "title": "Coding",
+                "description": "Building web applications and learning new technologies."
+            },
+            "basketball": {
+                "title": "Basketball",
+                "description": "Active in local team for over 10 years."
+            },
+            "reading": {
+                "title": "Reading",
+                "description": "Books on sci-fi, fantasy, or whatever I find interesting at the moment."
+            },
+            "gaming": {
+                "title": "Video Games",
+                "description": "Competitive online games or chill base building strategy games."
+            }
+        }
+    },
+    "projects": {
+        "title": "My Work",
+        "nav": "Projects",
+        "kg": {
+            "title": "Work Plan for Carnival Club",
+            "description": "Planning and implementation of a platform for organizing shift schedules"
+        },
+        "cbis": {
+            "title": "CBIS Project - Billsplit",
+            "description": "Developed a fullstack app to upload and split bills as part of the course \"Cloud-based Information Systems\""
+        },
+        "mowas": {
+            "title": "MoWaS Integration",
+            "description": "Backend for integrating MoWaS warning messages into digital outdoor displays",
+            "paragraph": "Finished during time at RBL Media GmbH"
+        }
+    },
+    "footer": {
+        "made_with": "Made with",
+        "love": "love"
+    }
+}
