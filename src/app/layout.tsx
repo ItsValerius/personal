@@ -15,7 +15,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Website - Valentin Kück",
   description: "Personal Website about me.",
-  openGraph: { siteName: "My Personal Website", type: "website" },
+  openGraph: {
+    siteName: "My Personal Website",
+    type: "website",
+    url:
+      "https://" +
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+        `http://localhost:${process.env.PORT || 3000}`),
+  },
 };
 
 export default function RootLayout({
