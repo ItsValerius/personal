@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { LanguageToggle } from "../language-toggle";
-import { Button } from "../ui/button";
-import { SunIcon, MoonIcon } from "lucide-react";
-import { MobileNav } from "../mobile-nav";
-import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import React from "react";
+import { LanguageToggle } from "../language-toggle";
+import { MobileNav } from "../mobile-nav";
+import { Button } from "../ui/button";
 const Header = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const t = useTranslations();
@@ -41,7 +41,7 @@ const Header = () => {
           <LanguageToggle />
           <Button
             variant="ghost"
-            className="group/toggle h-8 w-8 px-0"
+            className={"group/toggle h-8 w-8 px-0 cursor-pointer"}
             onClick={toggleTheme}
           >
             <SunIcon className="hidden [html.dark_&]:block" />
