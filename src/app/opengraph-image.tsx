@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { join } from "path";
+import { readFile } from "fs/promises";
 
 // Image metadata
 export const alt = "About Me";
@@ -6,40 +8,23 @@ export const size = {
   width: 128,
   height: 128,
 };
+export const config = {
+  runtime: "edge",
+};
 
 export const contentType = "image/png";
 
 // Image generation
 export default async function Image() {
-  // Font loading, process.cwd() is Next.js project directory
+  const logoData = await readFile(join(process.cwd(), "public/me.jpg"));
+  const logoSrc = Uint8Array.from(logoData).buffer;
 
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="32"
-          cy="32"
-          r="30"
-          fill="#fff6ea"
-          stroke="#fff6ea"
-          strokeWidth="2"
-        />
-
-        <path
-          d="M20 20L32 44L44 20"
-          stroke="#cc7900"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
+        <img src={logoSrc} height="128" width="128" alt="me" />
+      </div>
     ),
     // ImageResponse options
     {
