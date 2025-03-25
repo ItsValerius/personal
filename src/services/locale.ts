@@ -18,7 +18,6 @@ export async function getUserLocale() {
       return { code, quality };
     });
     const sortedLanguages = languages.sort((a, b) => b.quality - a.quality);
-    console.log(sortedLanguages);
     // Find the first supported language
     for (const lang of sortedLanguages) {
       // Check full locale (de-DE) first
