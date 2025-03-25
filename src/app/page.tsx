@@ -267,12 +267,13 @@ export default function Home() {
                   </p>
                   <ul className="list-disc pl-5 text-muted-foreground space-y-1">
                     <li>
-                      Wartung und Instandhaltung von Bestandssystemen Backend
-                      (Laravel) / Frontend (Vue, Blade, JQuery, SCSS)
+                      Wartung, Instandhaltung und Weiterentwicklung von
+                      Bestandssystemen Backend (Laravel) / Frontend (Vue, Blade,
+                      JQuery, SCSS)
                     </li>
                     <li>
-                      Entwicklung von Backends und Admin Panel (Laravel,
-                      Filament)
+                      Entwicklung von Backend-Systemen und Admin-Panels
+                      (Laravel, Filament)
                     </li>
                   </ul>
                   <div
@@ -319,8 +320,8 @@ export default function Home() {
                     </li>
                     <li>Support bei Errichtung neuer Werbeflächen</li>
                     <li>
-                      Entwicklung eines Backends zur Integration von MoWaS
-                      Warnmeldungen
+                      Entwicklung eines Backends zur Integration von
+                      MoWaS-Warnmeldungen
                     </li>
                   </ul>
                 </div>
@@ -568,7 +569,7 @@ export default function Home() {
                     />
                   ),
                   description:
-                    "Seit mehr als 10 Jahren aktiv im lokalen Verein.",
+                    "Seit über 10 Jahren spiele ich aktiv Basketball im lokalen Verein.",
                 },
                 {
                   title: "Lesen",
@@ -579,7 +580,7 @@ export default function Home() {
                     />
                   ),
                   description:
-                    "Bücher über Science-Fiction, Fantasy oder was mir gerade so gefällt.",
+                    "Bücher aus den Bereichen Science-Fiction und Fantasy sowie alles, was mir sonst gerade gefällt.",
                 },
                 {
                   title: "Videospiele",
@@ -697,8 +698,8 @@ export default function Home() {
                       CBIS Projekt - Billsplit
                     </h3>
                     <p className="text-muted-foreground">
-                      Entwicklung einer Fullstack App zum hochladen und
-                      aufteilen von Rechnungen im Rahmen der Veranstaltung
+                      Entwicklung einer Fullstack-App zum Hochladen und
+                      Aufteilen von Rechnungen im Rahmen der Veranstaltung
                       &quot;Cloud-basierte Informationssysteme&quot;
                     </p>
                     <div
@@ -739,10 +740,10 @@ export default function Home() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold">MoWaS Integration</h3>
+                    <h3 className="text-xl font-bold">MoWaS-Integration</h3>
                     <p className="text-muted-foreground">
-                      Entwicklung eines Backends zur Integration von MoWaS
-                      Warnmeldungen für digitale Außenwerbeflächen
+                      Entwicklung eines Backends zur Integration von
+                      MoWaS-Warnmeldungen für digitale Außenwerbeflächen
                     </p>
                     <div
                       className="flex flex-wrap gap-2"
