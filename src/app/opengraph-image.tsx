@@ -8,16 +8,13 @@ export const size = {
   width: 128,
   height: 128,
 };
-export const config = {
-  runtime: "edge",
-};
 
 export const contentType = "image/png";
 
 // Image generation
 export default async function Image() {
   const logoData = await readFile(join(process.cwd(), "public/me.jpg"));
-  const logoSrc = String(Uint8Array.from(logoData).buffer);
+  const logoSrc = Uint8Array.from(logoData).buffer;
 
   return new ImageResponse(
     (
