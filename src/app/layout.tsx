@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Website - Valentin Kück",
   description: "Personal Website about me.",
+  openGraph: { siteName: "My Personal Website", type: "website" },
 };
 
 export default function RootLayout({
