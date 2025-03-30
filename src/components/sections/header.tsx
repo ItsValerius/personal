@@ -3,9 +3,9 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import React from "react";
 import { LanguageToggle } from "../language-toggle";
-import { MobileNav } from "../mobile-nav";
+import MobileNavigation from "./navigation/mobile-navigation";
 import { Button } from "../ui/button";
-import Navigation from "./navigation/navigation-items";
+import Navigation from "./navigation/desktop-navigation";
 const Header = () => {
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -41,7 +41,7 @@ const Header = () => {
             <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
-        <MobileNav />
+        <MobileNavigation items={navItems} />
       </div>
     </header>
   );

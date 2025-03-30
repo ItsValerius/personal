@@ -1,22 +1,25 @@
-import React from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import React from "react";
 
-interface NavigationItemProps {
+interface NavigationLinkProps {
   item: string;
+  onClick?: () => void;
 }
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
+const NavigationLink: React.FC<NavigationLinkProps> = ({ item, onClick }) => {
+  const t = useTranslations();
   return (
     <Link
-      key={item}
       href={`#${item}`}
+      onClick={onClick}
       className="text-sm font-medium hover:text-primary transition-colors
                focus-visible:outline-none focus-visible:ring-2
                focus-visible:ring-primary focus-visible:ring-offset-2"
     >
-      {item}
+      {t(`${item}.nav`)}
     </Link>
   );
 };
 
-export default NavigationItem;
+export default NavigationLink;

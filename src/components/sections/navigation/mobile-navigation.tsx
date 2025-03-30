@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Link from "next/link";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import NavigationLinks from "./navigation-links";
 
-export function MobileNav() {
+interface NavigationProps {
+  items: string[];
+}
+
+const MobileNavigation: React.FC<NavigationProps> = ({ items }) => {
   const [open, setOpen] = useState(false);
 
   const handleLinkClick = () => {
@@ -30,25 +34,11 @@ export function MobileNav() {
         className="w-[250px] sm:w-[300px] px-6 py-8 flex flex-col gap-8"
       >
         <nav className="flex flex-col gap-5" aria-label="Mobile Navigation">
-          {[
-            { href: "#about", label: "Über mich" },
-            { href: "#experience", label: "Erfahrung" },
-            { href: "#education", label: "Bildung" },
-            { href: "#skills", label: "Kenntnisse" },
-            { href: "#interests", label: "Interessen" },
-            { href: "#projects", label: "Projekte" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={handleLinkClick}
-              className="text-base font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              {item.label}
-            </Link>
-          ))}
+          <NavigationLinks items={items} onClick={handleLinkClick} />
         </nav>
       </SheetContent>
     </Sheet>
   );
-}
+};
+
+export default MobileNavigation;
