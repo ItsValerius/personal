@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed">
       <a href="#about" className="skip-to-content">
-        {t("nav.about")}
+        {t("about.nav")}
       </a>
       <Header />
 

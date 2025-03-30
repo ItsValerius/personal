@@ -7,36 +7,30 @@ import React from "react";
 import { LanguageToggle } from "../language-toggle";
 import { MobileNav } from "../mobile-nav";
 import { Button } from "../ui/button";
+import Navigation from "./navigation/navigation-items";
 const Header = () => {
   const { setTheme, resolvedTheme } = useTheme();
-  const t = useTranslations();
+
   const toggleTheme = React.useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }, [resolvedTheme, setTheme]);
+
+  const navItems = [
+    "about",
+    "experience",
+    "education",
+    "skills",
+    "interests",
+    "projects",
+  ];
+
   return (
     <header
       className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
       role="banner"
     >
       <div className="container flex h-16 items-center md:justify-between justify-end p-4 mx-auto">
-        <nav className="hidden md:flex gap-6" aria-label="Hauptnavigation">
-          {[
-            "about",
-            "experience",
-            "education",
-            "skills",
-            "interests",
-            "projects",
-          ].map((key) => (
-            <Link
-              key={key}
-              href={`#${key}`}
-              className="text-sm font-medium hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              {t(`nav.${key}`)}
-            </Link>
-          ))}
-        </nav>
+        <Navigation items={navItems} />
         <div className="flex justify-center items-center">
           <LanguageToggle />
           <Button

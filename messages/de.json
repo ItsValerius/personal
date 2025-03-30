@@ -1,12 +1,4 @@
 {
-    "nav": {
-        "about": "Über mich",
-        "experience": "Erfahrung",
-        "education": "Bildung",
-        "skills": "Kenntnisse",
-        "interests": "Interessen",
-        "projects": "Projekte"
-    },
     "hero": {
         "title": "Hi! Ich bin ",
         "subtitle": "Full Stack Entwickler mit Fokus auf PHP/Laravel und JavaScript/TypeScript"
