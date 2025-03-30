@@ -1,7 +1,4 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 import EducationCard from "./education/education-card";
 

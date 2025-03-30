@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
-import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 const HeroSection = () => {
   const t = useTranslations("hero");
   return (

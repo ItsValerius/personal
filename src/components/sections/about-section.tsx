@@ -1,8 +1,7 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import { MapPin, Mail, Briefcase } from "lucide-react";
+import { Briefcase, Mail, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 const AboutSection = () => {
   const t = useTranslations("about");
   return (

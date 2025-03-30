@@ -1,8 +1,6 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Code, Gamepad2, Icon } from "lucide-react";
 import { basketball } from "@lucide/lab";
-import { Card, CardContent } from "@/components/ui/card";
+import { BookOpen, Code, Gamepad2, Icon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import InterestCard from "./interests/interest-card";
 

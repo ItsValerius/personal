@@ -1,7 +1,5 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Code, Languages } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 import SkillCard from "./skills/skill-card";
 

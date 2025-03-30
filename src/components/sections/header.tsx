@@ -1,8 +1,6 @@
 "use client";
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import React from "react";
 import { LanguageToggle } from "../language-toggle";
 import { MobileNav } from "../mobile-nav";
