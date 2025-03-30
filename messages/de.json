@@ -106,6 +106,10 @@
             "title": "MoWaS Integration",
             "description": "Entwicklung eines Backends zur Integration von MoWaS Warnmeldungen für digitale Außenwerbeflächen",
             "paragraph": "Abgeschlossen während der Tätigkeit bei RBL Media GmbH"
+        },
+        "personal": {
+            "title": "Persönliche Website",
+            "description": "Konzeption, Design und Entwicklung meiner persönlichen Portfolio-Website."
         }
     },
     "footer": {

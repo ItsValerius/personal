@@ -106,6 +106,10 @@
             "title": "MoWaS Integration",
             "description": "Backend for integrating MoWaS warning messages into digital outdoor displays",
             "paragraph": "Finished during time at RBL Media GmbH"
+        },
+        "personal": {
+            "title": "Personal Website",
+            "description": "Conception, design and development of my personal portfolio website"
         }
     },
     "footer": {
