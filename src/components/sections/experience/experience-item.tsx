@@ -1,7 +1,5 @@
-// components/ExperienceItem.jsx
-
 import React from "react";
-import { Badge } from "@/components/ui/badge"; // or wherever your Badge component lives
+import { Badge } from "@/components/ui/badge";
 
 interface ExperienceItemProps {
   title: string;

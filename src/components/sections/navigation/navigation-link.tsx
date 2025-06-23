@@ -8,7 +8,7 @@ interface NavigationLinkProps {
 }
 
 const NavigationLink: React.FC<NavigationLinkProps> = ({ item, onClick }) => {
-  const t = useTranslations();
+  const t = useTranslations(item);
   return (
     <Link
       href={`#${item}`}
@@ -17,7 +17,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({ item, onClick }) => {
                focus-visible:outline-none focus-visible:ring-2
                focus-visible:ring-primary focus-visible:ring-offset-2"
     >
-      {t(`${item}.nav`)}
+      {t("nav")}
     </Link>
   );
 };
