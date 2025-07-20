@@ -13,14 +13,39 @@
     "experience": {
         "title": "Mein beruflicher Werdegang",
         "nav": "Erfahrung",
-        "jb": {
-            "title": "Werkstudent Software Engineer/ Full Stack Entwickler",
+        "jb_fulltime": {
+            "title": "Software Engineer/ Full Stack Entwickler",
             "company": "Johnny Bytes GmbH (Köln, DE)",
-            "start": "seit September 2023",
+            "start": "seit Juli 2025",
             "tasks": {
                 "task_1": "Wartung und Pflege bestehender Systeme im Backend (Laravel) und Frontend (Vue, Blade, JQuery, SCSS)",
                 "task_2": "Entwicklung von Backend-Systemen und Admin-Panels (Laravel, Filament)"
-            }
+            },
+            "technologies": [
+                "Laravel",
+                "Vue",
+                "Blade",
+                "JQuery",
+                "SCSS",
+                "Filament"
+            ]
+        },
+        "jb": {
+            "title": "Werkstudent Software Engineer/ Full Stack Entwickler",
+            "company": "Johnny Bytes GmbH (Köln, DE)",
+            "start": "September 2023 - Juli 2025",
+            "tasks": {
+                "task_1": "Wartung und Pflege bestehender Systeme im Backend (Laravel) und Frontend (Vue, Blade, JQuery, SCSS)",
+                "task_2": "Entwicklung von Backend-Systemen und Admin-Panels (Laravel, Filament)"
+            },
+            "technologies": [
+                "Laravel",
+                "Vue",
+                "Blade",
+                "JQuery",
+                "SCSS",
+                "Filament"
+            ]
         },
         "rbl": {
             "title": "Werkstudent DOOH IT & Administration",

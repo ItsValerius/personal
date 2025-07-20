@@ -13,13 +13,38 @@
     "experience": {
         "title": "My Professional Experience",
         "nav": "Experience",
-        "jb": {
-            "title": "Working Student Software Engineer / Full Stack Developer",
+        "jb_fulltime": {
+            "title": "Software Engineer / Full Stack Developer",
             "company": "Johnny Bytes GmbH (Cologne, DE)",
-            "start": "since September 2023",
+            "start": "since July 2025",
             "tasks": [
                 "Maintenance and upkeep of existing backend (Laravel) and frontend (Vue, Blade, JQuery, SCSS) systems",
                 "Development of backend systems and admin panels (Laravel, Filament)"
+            ],
+            "technologies": [
+                "Laravel",
+                "Vue",
+                "Blade",
+                "JQuery",
+                "SCSS",
+                "Filament"
+            ]
+        },
+        "jb": {
+            "title": "Working Student Software Engineer / Full Stack Developer",
+            "company": "Johnny Bytes GmbH (Cologne, DE)",
+            "start": "September 2023 - July 2025",
+            "tasks": [
+                "Maintenance and upkeep of existing backend (Laravel) and frontend (Vue, Blade, JQuery, SCSS) systems",
+                "Development of backend systems and admin panels (Laravel, Filament)"
+            ],
+            "technologies": [
+                "Laravel",
+                "Vue",
+                "Blade",
+                "JQuery",
+                "SCSS",
+                "Filament"
             ]
         },
         "rbl": {

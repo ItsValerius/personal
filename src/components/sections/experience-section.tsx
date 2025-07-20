@@ -11,13 +11,26 @@ const ExperienceSection = () => {
   // Create an array of job data
   const jobs = [
     {
+      title: t("jb_fulltime.title"),
+      start: t("jb_fulltime.start"),
+      company: t("jb_fulltime.title"),
+      tasks: Object.keys(messages.experience.jb.tasks).map((task) =>
+        t(`jb_fulltime.tasks.${task}`)
+      ),
+      technologies: Object.keys(messages.experience.jb.technologies).map(
+        (technology) => t(`jb_fulltime.technologies.${technology}`)
+      ),
+    },
+    {
       title: t("jb.title"),
       start: t("jb.start"),
       company: t("jb.title"),
       tasks: Object.keys(messages.experience.jb.tasks).map((task) =>
         t(`jb.tasks.${task}`)
       ),
-      technologies: ["Laravel", "Vue", "Blade", "JQuery", "SCSS", "Filament"],
+      technologies: Object.keys(messages.experience.jb.technologies).map(
+        (technology) => t(`jb.technologies.${technology}`)
+      ),
     },
     {
       title: t("rbl.title"),
