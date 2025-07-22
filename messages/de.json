@@ -5,10 +5,10 @@
     },
     "about": {
         "title": "Persönliche Informationen",
-        "description": "Ich bin ein Full Stack Entwickler mit Erfahrung in der Entwicklung von Webanwendungen mit PHP/Laravel und JavaScript/TypeScript. Derzeit studiere ich Wirtschaftsinformatik an der FH Aachen und arbeite als Werkstudent bei <link>Johnny Bytes GmbH.</link>",
+        "description": "Ich bin ein Full Stack Entwickler mit Erfahrung in der Entwicklung von Webanwendungen mit PHP/Laravel und JavaScript/TypeScript. Derzeit arbeite als Software Engineer bei <link>Johnny Bytes GmbH.</link>",
         "location": "Erkelenz, Deutschland",
         "nav": "Über mich",
-        "position": "Werkstudent Software Engineer"
+        "position": "Software Engineer"
     },
     "experience": {
         "title": "Mein beruflicher Werdegang",

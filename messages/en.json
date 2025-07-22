@@ -5,7 +5,7 @@
     },
     "about": {
         "title": "Personal Information",
-        "description": "I'm a full stack developer with experience in building web applications using PHP/Laravel and JavaScript/TypeScript. I'm currently studying Business Informatics at FH Aachen. I am also a working student at <link> Johnny Bytes GmbH.</link>",
+        "description": "I'm a full stack developer with experience in building web applications using PHP/Laravel and JavaScript/TypeScript. I'm currently working as a Software Engineer at <link>Johnny Bytes GmbH.</link>",
         "location": "Erkelenz, Germany",
         "nav": "About Me",
         "position": "Working student Software Engineer"
