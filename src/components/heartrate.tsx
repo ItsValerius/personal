@@ -16,7 +16,7 @@ export default function Component() {
     const timer = setTimeout(() => setAnimate(false), 600);
     return () => clearTimeout(timer);
   }, [heartrate]);
-  if (!heartrate) return;
+  if (!heartrate) return <div>Momentan kein Wert verfügbar.</div>;
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <div className="flex  items-center justify-center">
@@ -36,7 +36,7 @@ export default function Component() {
           className="relative flex items-center justify-center"
         >
           <Heart className="w-16 h-16 text-red-500 fill-red-500 drop-shadow-lg" />
-          {heartrate?.value && (
+          {heartrate.value && (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
