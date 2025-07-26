@@ -28,14 +28,11 @@ export async function GET(req: Request) {
       sub.on("message", onMessage);
 
       // --- Keep alive ---
-      const keepAlive = setInterval(() => safeEnqueue(":ka\n\n"), 15_000);
 
       // --- One cleanup function ---
       dispose = () => {
         if (closed) return;
         closed = true;
-
-        clearInterval(keepAlive);
 
         sub.unsubscribe(["heartrate"]);
         try {
