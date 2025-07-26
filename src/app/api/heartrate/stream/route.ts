@@ -1,5 +1,5 @@
 import { redis } from "@/lib/redis";
-
+export const maxDuration = 150;
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
