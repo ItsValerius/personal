@@ -6,7 +6,12 @@ export function useHeartrate(url = "/api/heartrate/stream") {
 
   useEffect(() => {
     const es = new EventSource(url);
-
+    fetch("/api/heartrate")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) setValue(data as HeartRate);
+      })
+      .catch(() => {}); // optional error handling
     const handler = (e: MessageEvent) => {
       setValue(JSON.parse(e.data) as HeartRate); // overwrite, no history
     };
