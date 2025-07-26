@@ -16,7 +16,14 @@ export default function Component() {
     const timer = setTimeout(() => setAnimate(false), 600);
     return () => clearTimeout(timer);
   }, [heartrate]);
-  if (!heartrate) return <div>Momentan kein Wert verfügbar.</div>;
+  if (!heartrate)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen ">
+        <div className="flex  items-center justify-center">
+          Momentan kein Wert verfügbar.
+        </div>
+      </div>
+    );
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <div className="flex  items-center justify-center">
