@@ -60,6 +60,12 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "heart-bounce": {
+          "0%": { transform: "scale(1)" },
+          "30%": { transform: "scale(1.35)" },
+          "60%": { transform: "scale(0.9)" },
+          "100%": { transform: "scale(1)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -72,6 +78,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "heart-bounce": "heart-bounce 0.4s cubic-bezier(.36,.07,.19,.97)",
       },
     },
   },
