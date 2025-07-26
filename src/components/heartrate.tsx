@@ -55,7 +55,7 @@ export default function Component() {
           )}
         </motion.div>
       </div>
-      <div>Letzer Wert von {new Date(heartrate.ts).toLocaleString()}</div>
+      <div>Letzer Wert vom: {new Date(heartrate.ts).toLocaleString()}</div>
     </div>
   );
 }

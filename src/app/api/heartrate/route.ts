@@ -17,6 +17,5 @@ export async function GET() {
       headers: { "Content-Type": "application/json" },
     });
   }
-  console.log(heartrate);
   return Response.json(heartrate);
 }
