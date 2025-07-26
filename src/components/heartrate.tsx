@@ -6,7 +6,7 @@ import { Heart } from "lucide-react";
 import { useHeartrate } from "@/hooks/useHeartrate";
 
 export default function Component() {
-  const heartrate = useHeartrate<{ ts: number; value: number }>();
+  const heartrate = useHeartrate();
 
   const [animate, setAnimate] = useState(false);
 
