@@ -132,5 +132,30 @@
     "footer": {
         "made_with": "Made with",
         "love": "Liebe"
+    },
+    "skipToContent": "Zum Hauptinhalt springen",
+    "heartrate": {
+        "stats": {
+            "average": "Durchschnitt",
+            "maximum": "Maximum",
+            "minimum": "Minimum",
+            "dataPoints": "Datenpunkte"
+        },
+        "chart": {
+            "title": "Herzfrequenz Verlauf",
+            "current": "Aktuell",
+            "time": "Zeit",
+            "avg": "Ø",
+            "inactive": {
+                "title": "App inaktiv",
+                "description": "Es wurden seit mehr als 30 Sekunden keine neuen Herzfrequenz-Messungen empfangen."
+            }
+        },
+        "empty": {
+            "title": "Noch keine Herzfrequenz Historie",
+            "description": "Warten auf Herzfrequenz-Messungen. Sobald Daten eintreffen, sehen Sie hier einen Echtzeit-Graphen mit Ihrem Herzfrequenz-Verlauf.",
+            "latestReading": "Letzte Messung"
+        },
+        "lastValue": "Letzter Wert vom"
     }
 }

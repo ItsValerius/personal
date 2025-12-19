@@ -1,58 +1,69 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { useMemo } from "react";
+import { useLocale } from "next-intl";
 import { useHeartrate } from "@/hooks/useHeartrate";
+import { useHeartrateHistory } from "@/hooks/useHeartrateHistory";
+import { HeartrateStatsCards } from "@/components/heartrate/heartrate-stats-cards";
+import { HeartrateChart } from "@/components/heartrate/heartrate-chart";
 
 export default function Component() {
   const heartrate = useHeartrate();
+  const history = useHeartrateHistory(heartrate, 60); // Keep last 60 points
 
-  const [animate, setAnimate] = useState(false);
+  const locale = useLocale();
 
-  // Trigger bounce animation whenever count changes
-  useEffect(() => {
-    setAnimate(true);
-    const timer = setTimeout(() => setAnimate(false), 600);
-    return () => clearTimeout(timer);
-  }, [heartrate]);
+  // Transform history data for Recharts
+  const chartData = useMemo(() => {
+    return history.map((point, index) => ({
+      index,
+      time: new Date(point.ts).toLocaleTimeString(locale, {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      }),
+      heartrate: point.value,
+      timestamp: point.ts,
+    }));
+  }, [history, locale]);
+
+  // Calculate statistics
+  const stats = useMemo(() => {
+    if (history.length === 0) return null;
+
+    const values = history.map((h) => h.value);
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const sum = values.reduce((a, b) => a + b, 0);
+    const avg = Math.round(sum / values.length);
+
+    // Calculate trend (comparing last 10 values to previous 10)
+    let trend: "up" | "down" | "stable" = "stable";
+    if (values.length >= 20) {
+      const recent = values.slice(-10);
+      const previous = values.slice(-20, -10);
+      const recentAvg = recent.reduce((a, b) => a + b, 0) / recent.length;
+      const previousAvg = previous.reduce((a, b) => a + b, 0) / previous.length;
+      const diff = recentAvg - previousAvg;
+      if (diff > 2) trend = "up";
+      else if (diff < -2) trend = "down";
+    }
+
+    return { min, max, avg, trend };
+  }, [history]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen ">
-      <div className="flex  items-center justify-center">
-        <motion.div
-          variants={{
-            initial: { scale: 1 },
-            bounce: {
-              scale: [1, 1.3, 0.9, 1.1, 1],
-              transition: {
-                duration: 0.6,
-                ease: "easeInOut",
-              },
-            },
-          }}
-          initial="initial"
-          animate={animate ? "bounce" : "initial"}
-          className="relative flex items-center justify-center"
-        >
-          <Heart className="w-16 h-16 text-red-500 fill-red-500 drop-shadow-lg" />
-          {heartrate && (
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="absolute text-white text-sm font-bold select-none"
-              style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
-            >
-              {heartrate.value ?? ""}
-            </motion.div>
-          )}
-        </motion.div>
-      </div>
-      {heartrate ? (
-        <div>Letzer Wert vom: {new Date(heartrate.ts).toLocaleString()}</div>
-      ) : (
-        <div className="h-6"> </div>
-      )}
+    <div className="flex flex-col items-center  min-h-[calc(100vh-4rem)] gap-8 ">
+      {/* Statistics Cards */}
+      <HeartrateStatsCards stats={stats} dataPointCount={history.length} />
+
+      {/* Real-time Graph */}
+      <HeartrateChart
+        chartData={chartData}
+        history={history}
+        currentValue={heartrate?.value ?? null}
+        lastUpdateTimestamp={heartrate?.ts ?? null}
+      />
     </div>
   );
 }

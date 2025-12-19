@@ -132,5 +132,30 @@
     "footer": {
         "made_with": "Made with",
         "love": "love"
+    },
+    "skipToContent": "Skip to main content",
+    "heartrate": {
+        "stats": {
+            "average": "Average",
+            "maximum": "Maximum",
+            "minimum": "Minimum",
+            "dataPoints": "Data Points"
+        },
+        "chart": {
+            "title": "Heartrate History",
+            "current": "Current",
+            "time": "Time",
+            "avg": "Ø",
+            "inactive": {
+                "title": "App Inactive",
+                "description": "No new heartrate measurements have been received for more than 30 seconds."
+            }
+        },
+        "empty": {
+            "title": "No Heartrate History Yet",
+            "description": "Waiting for heartrate measurements to arrive. Once data starts coming in, you'll see a real-time graph showing your heartrate history here.",
+            "latestReading": "Latest reading"
+        },
+        "lastValue": "Last value from"
     }
 }
