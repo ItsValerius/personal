@@ -158,7 +158,7 @@
         },
         "lastValue": "Letzter Wert vom",
         "note": {
-            "text": "Diese Seite ist nur manchmal aktiv und liefert nur Werte, wenn meine App läuft. Ein kleines Spaßprojekt von mir!"
+            "text": "Diese Seite ist nur manchmal aktiv und liefert auch nur dann Werte, wenn meine App läuft."
         }
     }
 }
