@@ -159,6 +159,20 @@
         "lastValue": "Last value from",
         "note": {
             "text": "This site might be active or not, depending on whether I have my app running."
+        },
+        "connection": {
+            "connecting": "Connecting",
+            "connected": "Connected",
+            "error": "Error",
+            "inactive": "Inactive"
+        },
+        "error": {
+            "title": "Connection Error",
+            "retry": "Retry"
+        },
+        "timeRange": {
+            "label": "Time Range",
+            "select": "Select"
         }
     }
 }

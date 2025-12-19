@@ -9,63 +9,29 @@ import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-    type ChartConfig,
 } from "@/components/ui/chart";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-
-// Constants
-const CHART_CONFIG = {
-    heartrate: {
-        label: "Heartrate",
-        theme: {
-            light: "oklch(0.65 0.15 25)",
-            dark: "oklch(0.6 0.15 25)",
-        },
-    },
-} satisfies ChartConfig;
-
-const INACTIVE_THRESHOLD_MS = 30_000;
-const CHECK_INTERVAL_MS = 1000;
-const CHART_MARGINS = { top: 5, right: 0, left: 0, bottom: 5 };
-const Y_AXIS_PADDING = 10;
-const GRADIENT_STOPS = {
-    start: { offset: "5%", opacity: 0.3 },
-    end: { offset: "95%", opacity: 0 },
-};
+import { HeartrateValueWithZone } from "./heartrate-value-with-zone";
+import {
+    CHART_CONFIG,
+    INACTIVE_THRESHOLD_MS,
+    CHART_MARGINS,
+    Y_AXIS_PADDING,
+    GRADIENT_STOPS,
+} from "@/lib/heartrate-chart-config";
+import {
+    calculateYDomain,
+    getTimeRange,
+} from "@/lib/heartrate-utils";
 
 // Types
-type ChartDataPoint = {
-    index: number;
-    time: string;
-    heartrate: number;
-    timestamp: number;
-};
-
-type HistoryPoint = {
-    value: number;
-    ts: number;
-};
+import type { ChartDataPoint, HeartRatePoint } from "@/types/heartrate";
 
 interface HeartrateChartProps {
     chartData: ChartDataPoint[];
-    history: HistoryPoint[];
+    history: HeartRatePoint[];
     currentValue: number | null;
     lastUpdateTimestamp: number | null;
-}
-
-// Helper functions
-function formatTime(ts: number, locale: string): string {
-    return new Date(ts).toLocaleTimeString(locale, {
-        hour: "2-digit",
-        minute: "2-digit",
-    });
-}
-
-function calculateYDomain(dataMin: number, dataMax: number): [number, number] {
-    return [
-        Math.max(0, Math.floor(dataMin - Y_AXIS_PADDING)),
-        Math.ceil(dataMax + Y_AXIS_PADDING),
-    ];
 }
 
 
@@ -92,25 +58,26 @@ function InactiveOverlay({ title, description }: { title: string; description: s
 function ChartHeader({
     title,
     timeRange,
-    currentLabel,
     currentValue,
 }: {
     title: string;
     timeRange: string | null;
-    currentLabel: string;
     currentValue: number | null;
 }) {
     return (
         <CardHeader>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <CardTitle>{title}</CardTitle>
-                    {timeRange && <CardDescription className="mt-1">{timeRange}</CardDescription>}
+                    {timeRange && (
+                        <CardDescription className="mt-1" aria-label={`Time range: ${timeRange}`}>
+                            {timeRange}
+                        </CardDescription>
+                    )}
                 </div>
-                <div className="text-right">
-                    <div className="text-sm text-muted-foreground">{currentLabel}</div>
-                    <div className="text-lg font-bold">{currentValue ?? 0} bpm</div>
-                </div>
+                {currentValue !== null && (
+                    <HeartrateValueWithZone value={currentValue} />
+                )}
             </div>
         </CardHeader>
     );
@@ -144,21 +111,22 @@ export function HeartrateChart({
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    // Update ref when timestamp changes
+    // Update ref when timestamp changes and re-check inactive state
     useEffect(() => {
         timestampRef.current = lastUpdateTimestamp;
-        // Update state when timestamp changes (async to avoid sync setState in effect)
-        if (!lastUpdateTimestamp) {
-            queueMicrotask(() => setIsInactive(false));
-        }
+        // Use setTimeout to avoid synchronous setState in effect
+        const timeoutId = setTimeout(() => {
+            if (!lastUpdateTimestamp) {
+                setIsInactive(false);
+            } else {
+                setIsInactive(Date.now() - lastUpdateTimestamp > INACTIVE_THRESHOLD_MS);
+            }
+        }, 0);
+        return () => clearTimeout(timeoutId);
     }, [lastUpdateTimestamp]);
 
     // Monitor app inactivity
     useEffect(() => {
-        if (!timestampRef.current) {
-            return;
-        }
-
         const checkInactive = () => {
             const currentTimestamp = timestampRef.current;
             if (!currentTimestamp) {
@@ -169,18 +137,12 @@ export function HeartrateChart({
         };
 
         checkInactive();
-        const interval = setInterval(checkInactive, CHECK_INTERVAL_MS);
+        const interval = setInterval(checkInactive, 1000);
         return () => clearInterval(interval);
     }, []);
 
     // Memoized values
-    const timeRange = useMemo(() => {
-        if (history.length === 0) return null;
-        return `${formatTime(history[0].ts, locale)} - ${formatTime(
-            history[history.length - 1].ts,
-            locale
-        )}`;
-    }, [history, locale]);
+    const timeRange = useMemo(() => getTimeRange(history, locale), [history, locale]);
 
     const yDomain = useMemo(() => {
         if (chartData.length === 0) {
@@ -188,7 +150,7 @@ export function HeartrateChart({
             return [0, 100];
         }
         const values = chartData.map((d) => d.heartrate);
-        return calculateYDomain(Math.min(...values), Math.max(...values));
+        return calculateYDomain(Math.min(...values), Math.max(...values), Y_AXIS_PADDING);
     }, [chartData]);
 
     return (
@@ -197,12 +159,13 @@ export function HeartrateChart({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="w-full max-w-4xl"
+            role="region"
+            aria-label={t("title")}
         >
             <Card>
                 <ChartHeader
                     title={t("title")}
                     timeRange={timeRange}
-                    currentLabel={t("current")}
                     currentValue={currentValue}
                 />
                 <CardContent className="relative px-2 md:px-6">
@@ -212,7 +175,11 @@ export function HeartrateChart({
                             description={t("inactive.description")}
                         />
                     )}
-                    <ChartContainer config={CHART_CONFIG} className="min-h-[300px] w-full -ml-2 md:ml-0">
+                    <ChartContainer
+                        config={CHART_CONFIG}
+                        className="min-h-[300px] w-full -ml-2 md:ml-0"
+                        aria-label={`${t("title")} chart showing heart rate over time`}
+                    >
                         <AreaChart
                             accessibilityLayer
                             data={chartData}

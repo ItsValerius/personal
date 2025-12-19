@@ -159,6 +159,20 @@
         "lastValue": "Letzter Wert vom",
         "note": {
             "text": "Diese Seite ist nur manchmal aktiv und liefert auch nur dann Werte, wenn meine App läuft."
+        },
+        "connection": {
+            "connecting": "Verbinde",
+            "connected": "Verbunden",
+            "error": "Fehler",
+            "inactive": "Inaktiv"
+        },
+        "error": {
+            "title": "Verbindungsfehler",
+            "retry": "Wiederholen"
+        },
+        "timeRange": {
+            "label": "Zeitraum",
+            "select": "Auswählen"
         }
     }
 }

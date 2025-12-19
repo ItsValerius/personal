@@ -1,36 +1,43 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-
-type HeartRatePoint = { value: number; ts: number };
+import type { HeartRatePoint } from "@/types/heartrate";
 
 export function useHeartrateHistory(
   currentHeartrate: HeartRatePoint | null,
   maxPoints = 60
 ) {
   const [history, setHistory] = useState<HeartRatePoint[]>([]);
-  const heartrateRef = useRef<HeartRatePoint | null>(null);
+  const lastTsRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Store the latest heartrate in a ref so we can access it in the effect
-    if (currentHeartrate) {
-      heartrateRef.current = currentHeartrate;
+    if (!currentHeartrate) return;
+
+    // Only add if timestamp changed (new reading)
+    if (lastTsRef.current !== currentHeartrate.ts) {
+      lastTsRef.current = currentHeartrate.ts;
+      // Use setTimeout to avoid synchronous setState in effect
+      const timeoutId = setTimeout(() => {
+        setHistory((prev) => {
+          // Avoid duplicate entries
+          if (prev.length > 0 && prev[prev.length - 1].ts === currentHeartrate.ts) {
+            return prev;
+          }
+          const newHistory = [...prev, currentHeartrate];
+          // Keep only the last maxPoints
+          return newHistory.slice(-maxPoints);
+        });
+      }, 0);
+      return () => clearTimeout(timeoutId);
     }
-
-    const heartrate = heartrateRef.current;
-    if (!heartrate) return;
-
-    // Add the new reading to history
-    setHistory((prev) => {
-      const lastTs = prev.length > 0 ? prev[prev.length - 1].ts : null;
-      // Only add if timestamp changed (new reading)
-      if (lastTs !== heartrate.ts) {
-        const newHistory = [...prev, heartrate];
-        // Keep only the last maxPoints
-        return newHistory.slice(-maxPoints);
-      }
-      return prev;
-    });
   }, [currentHeartrate, maxPoints]);
+
+  // Reset history when maxPoints changes
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setHistory((prev) => prev.slice(-maxPoints));
+    }, 0);
+    return () => clearTimeout(timeoutId);
+  }, [maxPoints]);
 
   return history;
 }
