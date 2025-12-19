@@ -53,7 +53,7 @@ export default function Heartrate() {
   }, [history]);
 
   return (
-    <div className="flex flex-col items-center  min-h-[calc(100vh-4rem)] gap-8 ">
+    <div className="flex flex-col items-center  min-h-[calc(100vh-4rem)] gap-4 ">
       {/* Statistics Cards */}
       <HeartrateStatsCards stats={stats} dataPointCount={history.length} />
 
