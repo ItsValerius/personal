@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 import { AreaChart, Area, CartesianGrid, XAxis, YAxis } from "recharts";
 import { useTranslations, useLocale } from "next-intl";
@@ -132,23 +132,40 @@ export function HeartrateChart({
 }: HeartrateChartProps) {
     const t = useTranslations("heartrate.chart");
     const locale = useLocale();
-    const [isInactive, setIsInactive] = useState(false);
+    const timestampRef = useRef(lastUpdateTimestamp);
+    const [isInactive, setIsInactive] = useState(() => {
+        if (!lastUpdateTimestamp) return false;
+        return Date.now() - lastUpdateTimestamp > INACTIVE_THRESHOLD_MS;
+    });
+
+    // Update ref when timestamp changes
+    useEffect(() => {
+        timestampRef.current = lastUpdateTimestamp;
+        // Update state when timestamp changes (async to avoid sync setState in effect)
+        if (!lastUpdateTimestamp) {
+            queueMicrotask(() => setIsInactive(false));
+        }
+    }, [lastUpdateTimestamp]);
 
     // Monitor app inactivity
     useEffect(() => {
-        if (!lastUpdateTimestamp) {
-            setIsInactive(false);
+        if (!timestampRef.current) {
             return;
         }
 
         const checkInactive = () => {
-            setIsInactive(Date.now() - lastUpdateTimestamp > INACTIVE_THRESHOLD_MS);
+            const currentTimestamp = timestampRef.current;
+            if (!currentTimestamp) {
+                setIsInactive(false);
+                return;
+            }
+            setIsInactive(Date.now() - currentTimestamp > INACTIVE_THRESHOLD_MS);
         };
 
         checkInactive();
         const interval = setInterval(checkInactive, CHECK_INTERVAL_MS);
         return () => clearInterval(interval);
-    }, [lastUpdateTimestamp]);
+    }, []);
 
     // Memoized values
     const timeRange = useMemo(() => {

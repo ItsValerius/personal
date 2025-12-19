@@ -9,13 +9,13 @@ export function useHeartrateHistory(
 ) {
   const [history, setHistory] = useState<HeartRatePoint[]>([]);
   const heartrateRef = useRef<HeartRatePoint | null>(null);
-  
-  // Store the latest heartrate in a ref so we can access it in the effect
-  if (currentHeartrate) {
-    heartrateRef.current = currentHeartrate;
-  }
 
   useEffect(() => {
+    // Store the latest heartrate in a ref so we can access it in the effect
+    if (currentHeartrate) {
+      heartrateRef.current = currentHeartrate;
+    }
+
     const heartrate = heartrateRef.current;
     if (!heartrate) return;
 
@@ -30,7 +30,7 @@ export function useHeartrateHistory(
       }
       return prev;
     });
-  }, [currentHeartrate?.ts, maxPoints]);
+  }, [currentHeartrate, maxPoints]);
 
   return history;
 }
