@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TrendingUp, TrendingDown, Activity, Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { StatCard } from "./stat-card";
@@ -18,18 +18,16 @@ export function HeartrateStatsCards({
 }: HeartrateStatsCardsProps) {
     const t = useTranslations("heartrate.stats");
     const [previousStats, setPreviousStats] = useState<HeartrateStats | null>(null);
-    const [previousDataPointCount, setPreviousDataPointCount] = useState<number>(0);
+    const statsRef = useRef<HeartrateStats | null>(null);
 
-    // Update previous values when stats change
+    // Track previous stats for trend comparison
     useEffect(() => {
         if (stats) {
-            setPreviousStats(stats);
+            // Save the current ref value as previous before updating
+            setPreviousStats(statsRef.current);
+            statsRef.current = stats;
         }
     }, [stats]);
-
-    useEffect(() => {
-        setPreviousDataPointCount(dataPointCount);
-    }, [dataPointCount]);
 
     return (
         <motion.div
@@ -63,7 +61,6 @@ export function HeartrateStatsCards({
                 icon={Clock}
                 label={t("dataPoints")}
                 value={dataPointCount}
-                previousValue={previousDataPointCount || null}
                 showTrend={false}
             />
         </motion.div>

@@ -40,21 +40,23 @@ export function StatCard({
     const trend = showTrend ? getTrend(currentNum, previousNum) : null;
 
     const TrendIcon = trend === "up" ? ArrowUp : trend === "down" ? ArrowDown : Minus;
+
+    // Downward trend is good (green), upward trend is bad (red)
     const trendColor =
-        trend === "up"
+        trend === "down"
             ? "text-green-600 dark:text-green-400"
-            : trend === "down"
-            ? "text-red-600 dark:text-red-400"
-            : "text-muted-foreground";
+            : trend === "up"
+                ? "text-red-600 dark:text-red-400"
+                : "text-muted-foreground";
 
     const trendLabel =
         trend === "up"
             ? "increasing"
             : trend === "down"
-            ? "decreasing"
-            : trend === "same"
-            ? "unchanged"
-            : "";
+                ? "decreasing"
+                : trend === "same"
+                    ? "unchanged"
+                    : "";
 
     return (
         <Card role="region" aria-label={label}>
