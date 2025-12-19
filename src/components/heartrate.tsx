@@ -7,7 +7,7 @@ import { useHeartrateHistory } from "@/hooks/useHeartrateHistory";
 import { HeartrateStatsCards } from "@/components/heartrate/heartrate-stats-cards";
 import { HeartrateChart } from "@/components/heartrate/heartrate-chart";
 
-export default function Component() {
+export default function Heartrate() {
   const heartrate = useHeartrate();
   const history = useHeartrateHistory(heartrate, 60); // Keep last 60 points
 

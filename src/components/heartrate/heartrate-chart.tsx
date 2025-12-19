@@ -26,7 +26,7 @@ const CHART_CONFIG = {
 
 const INACTIVE_THRESHOLD_MS = 30_000;
 const CHECK_INTERVAL_MS = 1000;
-const CHART_MARGINS = { top: 5, right: 10, left: 10, bottom: 5 };
+const CHART_MARGINS = { top: 5, right: 0, left: 0, bottom: 5 };
 const MAX_X_AXIS_LABELS = 6;
 const Y_AXIS_PADDING = 10;
 const GRADIENT_STOPS = {
@@ -204,14 +204,14 @@ export function HeartrateChart({
                     currentLabel={t("current")}
                     currentValue={currentValue}
                 />
-                <CardContent className="relative">
+                <CardContent className="relative px-2 md:px-6">
                     {isInactive && (
                         <InactiveOverlay
                             title={t("inactive.title")}
                             description={t("inactive.description")}
                         />
                     )}
-                    <ChartContainer config={CHART_CONFIG} className="min-h-[300px] w-full">
+                    <ChartContainer config={CHART_CONFIG} className="min-h-[300px] w-full -ml-2 md:ml-0">
                         <AreaChart
                             accessibilityLayer
                             data={chartData}
@@ -244,6 +244,7 @@ export function HeartrateChart({
                                 axisLine={false}
                                 tickMargin={8}
                                 domain={yDomain}
+                                className="md:[&_text]:text-sm! [&_text]:text-xs!"
                             />
                             <ChartTooltip
                                 content={
