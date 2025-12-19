@@ -36,7 +36,7 @@ export function StatCard({
     showTrend = false,
 }: StatCardProps) {
     const currentNum = extractNumber(value);
-    const previousNum = extractNumber(previousValue);
+    const previousNum = extractNumber(previousValue ?? null);
     const trend = showTrend ? getTrend(currentNum, previousNum) : null;
 
     const TrendIcon = trend === "up" ? ArrowUp : trend === "down" ? ArrowDown : Minus;
