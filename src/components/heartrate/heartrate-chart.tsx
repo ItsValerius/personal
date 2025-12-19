@@ -27,7 +27,6 @@ const CHART_CONFIG = {
 const INACTIVE_THRESHOLD_MS = 30_000;
 const CHECK_INTERVAL_MS = 1000;
 const CHART_MARGINS = { top: 5, right: 0, left: 0, bottom: 5 };
-const MAX_X_AXIS_LABELS = 6;
 const Y_AXIS_PADDING = 10;
 const GRADIENT_STOPS = {
     start: { offset: "5%", opacity: 0.3 },
@@ -69,14 +68,7 @@ function calculateYDomain(dataMin: number, dataMax: number): [number, number] {
     ];
 }
 
-function createTickFormatter(dataLength: number) {
-    const showEvery = Math.ceil(dataLength / MAX_X_AXIS_LABELS);
-    return (value: string, index: number): string => {
-        if (index === 0) return "";
-        if (index === dataLength - 1) return value;
-        return index % showEvery === 0 ? value : "";
-    };
-}
+
 
 // Sub-components
 function InactiveOverlay({ title, description }: { title: string; description: string }) {
@@ -138,6 +130,20 @@ export function HeartrateChart({
         return Date.now() - lastUpdateTimestamp > INACTIVE_THRESHOLD_MS;
     });
 
+    // Detect mobile screen size for responsive chart adjustments
+    const [isMobile, setIsMobile] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        queueMicrotask(() => setIsMounted(true));
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     // Update ref when timestamp changes
     useEffect(() => {
         timestampRef.current = lastUpdateTimestamp;
@@ -175,11 +181,6 @@ export function HeartrateChart({
             locale
         )}`;
     }, [history, locale]);
-
-    const tickFormatter = useMemo(
-        () => createTickFormatter(chartData.length),
-        [chartData.length]
-    );
 
     const yDomain = useMemo(() => {
         if (chartData.length === 0) {
@@ -236,8 +237,16 @@ export function HeartrateChart({
                                 dataKey="time"
                                 tickLine={false}
                                 axisLine={false}
+                                interval={"preserveStartEnd"}
                                 tickMargin={8}
-                                tickFormatter={tickFormatter}
+                                {...(isMounted && isMobile ? {
+                                    angle: -45,
+                                    textAnchor: "end",
+                                    height: 60
+                                } : {
+                                    angle: 0,
+                                    textAnchor: "middle"
+                                })}
                             />
                             <YAxis
                                 tickLine={false}

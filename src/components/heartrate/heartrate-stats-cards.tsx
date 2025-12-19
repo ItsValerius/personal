@@ -9,7 +9,6 @@ type HeartrateStats = {
     min: number;
     max: number;
     avg: number;
-    trend: "up" | "down" | "stable";
 };
 
 interface HeartrateStatsCardsProps {

@@ -156,6 +156,9 @@
             "description": "Warten auf Herzfrequenz-Messungen. Sobald Daten eintreffen, sehen Sie hier einen Echtzeit-Graphen mit Ihrem Herzfrequenz-Verlauf.",
             "latestReading": "Letzte Messung"
         },
-        "lastValue": "Letzter Wert vom"
+        "lastValue": "Letzter Wert vom",
+        "note": {
+            "text": "Diese Seite ist nur manchmal aktiv und liefert nur Werte, wenn meine App läuft. Ein kleines Spaßprojekt von mir!"
+        }
     }
 }

@@ -156,6 +156,9 @@
             "description": "Waiting for heartrate measurements to arrive. Once data starts coming in, you'll see a real-time graph showing your heartrate history here.",
             "latestReading": "Latest reading"
         },
-        "lastValue": "Last value from"
+        "lastValue": "Last value from",
+        "note": {
+            "text": "This might be active or not, depending on whether I have my app running. Just a little fun project I built for myself!"
+        }
     }
 }

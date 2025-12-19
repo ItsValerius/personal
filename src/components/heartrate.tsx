@@ -1,17 +1,20 @@
 "use client";
 
 import { useMemo } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { Info } from "lucide-react";
 import { useHeartrate } from "@/hooks/useHeartrate";
 import { useHeartrateHistory } from "@/hooks/useHeartrateHistory";
 import { HeartrateStatsCards } from "@/components/heartrate/heartrate-stats-cards";
 import { HeartrateChart } from "@/components/heartrate/heartrate-chart";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Heartrate() {
   const heartrate = useHeartrate();
   const history = useHeartrateHistory(heartrate, 60); // Keep last 60 points
 
   const locale = useLocale();
+  const t = useTranslations("heartrate.note");
 
   // Transform history data for Recharts
   const chartData = useMemo(() => {
@@ -37,23 +40,21 @@ export default function Heartrate() {
     const sum = values.reduce((a, b) => a + b, 0);
     const avg = Math.round(sum / values.length);
 
-    // Calculate trend (comparing last 10 values to previous 10)
-    let trend: "up" | "down" | "stable" = "stable";
-    if (values.length >= 20) {
-      const recent = values.slice(-10);
-      const previous = values.slice(-20, -10);
-      const recentAvg = recent.reduce((a, b) => a + b, 0) / recent.length;
-      const previousAvg = previous.reduce((a, b) => a + b, 0) / previous.length;
-      const diff = recentAvg - previousAvg;
-      if (diff > 2) trend = "up";
-      else if (diff < -2) trend = "down";
-    }
-
-    return { min, max, avg, trend };
+    return { min, max, avg };
   }, [history]);
 
   return (
     <div className="flex flex-col items-center  min-h-[calc(100vh-4rem)] gap-4 ">
+      {/* Note */}
+      <Card className="w-full max-w-4xl border-muted bg-muted/30">
+        <CardContent className="flex items-center gap-2 py-2">
+          <Info className="h-4 w-4 text-primary shrink-0" />
+          <p className="text-xs text-foreground">
+            {t("text")}
+          </p>
+        </CardContent>
+      </Card>
+
       {/* Statistics Cards */}
       <HeartrateStatsCards stats={stats} dataPointCount={history.length} />
 
