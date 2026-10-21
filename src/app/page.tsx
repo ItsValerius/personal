@@ -4,7 +4,6 @@ import ExperienceSection from "@/components/sections/experience-section";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero-section";
-import InterestsSection from "@/components/sections/interests-section";
 import ProjectsSection from "@/components/sections/projects-section";
 import SkillsSection from "@/components/sections/skills-section";
 import { useTranslations } from "next-intl";
@@ -40,9 +39,6 @@ export default function Home() {
 
         {/* Education Section */}
         <EducationSection />
-
-        {/* Interests Section */}
-        <InterestsSection />
       </main>
 
       {/* Footer */}

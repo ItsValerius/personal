@@ -75,36 +75,16 @@
     },
     "skills": {
         "title": "Meine Fähigkeiten",
-        "backend": "Backend Entwicklung",
-        "frontend": "Frontend Entwicklung",
-        "others": "Weitere Technologien",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "all": "Alle",
+        "testing": "Testing",
+        "devops": "DevOps & Hosting",
         "languages": "Sprachen",
         "nav": "Kenntnisse",
         "languageBadges": {
             "german": "Deutsch (Muttersprache)",
             "english": "Englisch (fließend, C1)"
-        }
-    },
-    "interests": {
-        "title": "Was mich begeistert",
-        "nav": "Interessen",
-        "items": {
-            "code": {
-                "title": "Programmieren",
-                "description": "Entwicklung von Webanwendungen und Erlernen neuer Technologien."
-            },
-            "basketball": {
-                "title": "Basketball",
-                "description": "Seit mehr als 10\u00a0Jahren aktiv im lokalen Verein."
-            },
-            "reading": {
-                "title": "Lesen",
-                "description": "Bücher über <nb>Science-Fiction</nb>, Fantasy oder was mir gerade so gefällt."
-            },
-            "gaming": {
-                "title": "Videospiele",
-                "description": "Kompetitive Online-Games oder entspannte Aufbauspiele."
-            }
         }
     },
     "projects": {

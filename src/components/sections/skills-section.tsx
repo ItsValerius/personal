@@ -1,16 +1,16 @@
 import { useTranslations } from "next-intl";
-import SkillCard from "./skills/skill-card";
+import SkillField from "./skills/skill-field";
 
 const SkillsSection = () => {
   const t = useTranslations("skills");
 
+  // core = the focus named in the hero line, set large in the field
   const skills = [
     {
       titleKey: "backend",
+      core: ["Laravel", "Filament"],
       skills: [
         "PHP",
-        "Laravel",
-        "Filament",
         "Node.js",
         "REST-APIs",
         "MySQL",
@@ -22,32 +22,32 @@ const SkillsSection = () => {
     },
     {
       titleKey: "frontend",
+      core: ["Vue", "React"],
       skills: [
-        "JavaScript",
         "TypeScript",
-        "Vue",
-        "React",
+        "JavaScript",
         "Next.js",
         "Blade",
         "jQuery",
-        "CSS",
         "Tailwind CSS",
+        "CSS",
         "SCSS",
       ],
     },
     {
-      titleKey: "others",
+      titleKey: "testing",
+      skills: ["PHPUnit", "Pest", "Vitest"],
+    },
+    {
+      titleKey: "devops",
       skills: [
-        "Docker",
         "Git",
-        "AWS",
+        "Docker",
         "GitHub Actions",
         "Bitbucket Pipelines",
         "Envoyer",
+        "AWS",
         "Vercel",
-        "PHPUnit",
-        "Pest",
-        "Vitest",
       ],
     },
     {
@@ -66,15 +66,15 @@ const SkillsSection = () => {
         <h2 id="skills-heading" className="text-3xl font-bold tracking-tight">
           {t("nav")}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-          {skills.map((item, index) => (
-            <SkillCard
-              key={index}
-              title={t(item.titleKey)}
-              skills={item.skills}
-            />
-          ))}
-        </div>
+        <SkillField
+          allLabel={t("all")}
+          groups={skills.map((item) => ({
+            key: item.titleKey,
+            title: t(item.titleKey),
+            core: item.core,
+            skills: item.skills,
+          }))}
+        />
       </div>
     </section>
   );

@@ -3,7 +3,10 @@ import EducationCard from "./education/education-card";
 
 const EducationSection = () => {
   const t = useTranslations("education");
-  const education = ["bachelor", "highschool"];
+  const education = [
+    ["bachelor", "thesis"],
+    ["highschool", "subjects"],
+  ] as const;
   return (
     <section
       id="education"
@@ -17,19 +20,17 @@ const EducationSection = () => {
         >
           {t("nav")}
         </h2>
-        {education.map((eduKey) => (
-          <EducationCard
-            eduKey={eduKey}
-            key={eduKey}
-            title={t(`${eduKey}.title`)}
-            school={t(`${eduKey}.school`)}
-            graduation={t(`${eduKey}.graduation`)}
-            thesis={eduKey === "bachelor" ? t(`${eduKey}.thesis`) : undefined}
-            subjects={
-              eduKey === "highschool" ? t(`${eduKey}.subjects`) : undefined
-            }
-          />
-        ))}
+        <ol className="border-b">
+          {education.map(([eduKey, detailKey]) => (
+            <EducationCard
+              key={eduKey}
+              title={t(`${eduKey}.title`)}
+              school={t(`${eduKey}.school`)}
+              graduation={t(`${eduKey}.graduation`)}
+              detail={t(`${eduKey}.${detailKey}`)}
+            />
+          ))}
+        </ol>
       </div>
     </section>
   );

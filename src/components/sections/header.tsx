@@ -21,7 +21,6 @@ const Header = () => {
     "experience",
     "skills",
     "education",
-    "interests",
   ];
 
   return (

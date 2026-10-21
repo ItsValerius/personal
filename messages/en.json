@@ -76,35 +76,15 @@
     "skills": {
         "title": "My Skills",
         "nav": "Skills",
-        "backend": "Backend Development",
-        "frontend": "Frontend Development",
-        "others": "Other Technologies",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "all": "All",
+        "testing": "Testing",
+        "devops": "DevOps & Hosting",
         "languages": "Languages",
         "languageBadges": {
             "german": "German (native)",
             "english": "English (fluent, C1)"
-        }
-    },
-    "interests": {
-        "title": "What I'm passionate about",
-        "nav": "Interests",
-        "items": {
-            "code": {
-                "title": "Coding",
-                "description": "Building web applications and learning new technologies."
-            },
-            "basketball": {
-                "title": "Basketball",
-                "description": "Active in local team for over 10\u00a0years."
-            },
-            "reading": {
-                "title": "Reading",
-                "description": "Books on sci-fi, fantasy, or whatever I find interesting at the moment."
-            },
-            "gaming": {
-                "title": "Video Games",
-                "description": "Competitive online games or chill base building strategy games."
-            }
         }
     },
     "projects": {
