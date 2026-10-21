@@ -10,7 +10,7 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardDescription } from "@/components/ui/card";
 import { HeartrateValueWithZone } from "./heartrate-value-with-zone";
 import {
     CHART_CONFIG,
@@ -68,7 +68,7 @@ function ChartHeader({
         <CardHeader>
             <div className="flex items-center justify-between flex-wrap gap-2">
                 <div>
-                    <CardTitle>{title}</CardTitle>
+                    <h1 className="leading-none font-semibold">{title}</h1>
                     {timeRange && (
                         <CardDescription className="mt-1" aria-label={`Time range: ${timeRange}`}>
                             {timeRange}
@@ -178,7 +178,8 @@ export function HeartrateChart({
                     <ChartContainer
                         config={CHART_CONFIG}
                         className="min-h-[300px] w-full -ml-2 md:ml-0"
-                        aria-label={`${t("title")} chart showing heart rate over time`}
+                        role="group"
+                        aria-label={t("title")}
                     >
                         <AreaChart
                             accessibilityLayer

@@ -87,7 +87,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
 
   return (
     <div
-      role="region"
+      role="group"
       aria-roledescription="carousel"
       aria-labelledby={headingId}
       className="space-y-6"
