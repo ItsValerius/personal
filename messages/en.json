@@ -4,14 +4,12 @@
         "subtitle": "Full stack developer focused on Laravel, Filament, Vue and React"
     },
     "about": {
-        "title": "Personal Information",
         "description": "Full stack developer with over three years of hands-on experience building and maintaining web applications, employed full-time at <link>Johnny\u00a0Bytes\u00a0GmbH</link> since 2025. Backend focus on Laravel and Filament, frontend focus on Vue and React. B.Sc. in Business Informatics (FH Aachen).",
         "location": "Erkelenz, Germany",
         "nav": "About Me",
         "position": "Software Engineer"
     },
     "experience": {
-        "title": "My Professional Experience",
         "nav": "Experience",
         "jb_fulltime": {
             "title": "Software\u00a0Engineer / Full\u00a0Stack Developer",
@@ -58,7 +56,6 @@
         }
     },
     "education": {
-        "title": "My Education",
         "nav": "Education",
         "bachelor": {
             "title": "Bachelor's in Business Informatics (B.Sc.)",
@@ -74,7 +71,6 @@
         }
     },
     "skills": {
-        "title": "My Skills",
         "nav": "Skills",
         "backend": "Backend",
         "frontend": "Frontend",
@@ -93,7 +89,6 @@
             "prev": "Previous project",
             "next": "Next project"
         },
-        "title": "My Work",
         "nav": "Projects",
         "kg": {
             "meta": "KG Knallköpp Golkrath e.V.",

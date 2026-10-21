@@ -4,14 +4,12 @@
         "subtitle": "Full-Stack-Entwickler mit Fokus auf Laravel, Filament, Vue und React"
     },
     "about": {
-        "title": "Persönliche Informationen",
         "description": "Full-Stack-Entwickler mit über drei Jahren Praxiserfahrung in der Entwicklung und Wartung von Webanwendungen, seit 2025 in Festanstellung bei der <link>Johnny\u00a0Bytes\u00a0GmbH</link>. Schwerpunkt im Backend auf Laravel und Filament, im Frontend auf Vue und React. B.Sc. Wirtschaftsinformatik (FH Aachen).",
         "location": "Erkelenz, Deutschland",
         "nav": "Über mich",
         "position": "Software Engineer"
     },
     "experience": {
-        "title": "Mein beruflicher Werdegang",
         "nav": "Erfahrung",
         "jb_fulltime": {
             "title": "Software\u00a0Engineer / Full-Stack-Entwickler",
@@ -58,7 +56,6 @@
         }
     },
     "education": {
-        "title": "Meine Ausbildung",
         "nav": "Bildung",
         "bachelor": {
             "title": "Studium der Wirtschaftsinformatik (Bachelor of Science)",
@@ -74,7 +71,6 @@
         }
     },
     "skills": {
-        "title": "Meine Fähigkeiten",
         "backend": "Backend",
         "frontend": "Frontend",
         "all": "Alle",
@@ -93,7 +89,6 @@
             "prev": "Vorheriges Projekt",
             "next": "Nächstes Projekt"
         },
-        "title": "Meine Arbeit",
         "nav": "Projekte",
         "kg": {
             "meta": "KG Knallköpp Golkrath e.V.",

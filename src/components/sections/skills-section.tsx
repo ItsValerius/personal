@@ -1,8 +1,9 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import SkillField from "./skills/skill-field";
 
 const SkillsSection = () => {
   const t = useTranslations("skills");
+  const locale = useLocale();
 
   // core = the focus named in the hero line, set large in the field
   const skills = [
@@ -67,6 +68,8 @@ const SkillsSection = () => {
           {t("nav")}
         </h2>
         <SkillField
+          // skill names differ per language, so the field rebuilds its layout on a switch
+          key={locale}
           allLabel={t("all")}
           groups={skills.map((item) => ({
             key: item.titleKey,
