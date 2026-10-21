@@ -4,7 +4,6 @@ import ExperienceSection from "@/components/sections/experience-section";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero-section";
-import InterestsSection from "@/components/sections/interests-section";
 import ProjectsSection from "@/components/sections/projects-section";
 import SkillsSection from "@/components/sections/skills-section";
 import { useTranslations } from "next-intl";
@@ -14,13 +13,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed">
-      <a href="#about" className="skip-to-content">
-        {t("about.nav")}
+      <a href="#main-content" className="skip-to-content">
+        {t("skipToContent")}
       </a>
       <Header />
 
       <main
-        className="container py-10 space-y-20 mx-auto px-2"
+        className="container py-10 space-y-24 mx-auto px-4"
         id="main-content"
       >
         {/* Hero Section */}
@@ -28,20 +27,18 @@ export default function Home() {
 
         {/* About Section */}
         <AboutSection />
+
+        {/* Projects Section */}
+        <ProjectsSection />
+
         {/* Experience Section */}
         <ExperienceSection />
-
-        {/* Education Section */}
-        <EducationSection />
 
         {/* Skills Section */}
         <SkillsSection />
 
-        {/* Interests Section */}
-        <InterestsSection />
-
-        {/* Projects Section */}
-        <ProjectsSection />
+        {/* Education Section */}
+        <EducationSection />
       </main>
 
       {/* Footer */}

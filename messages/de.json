@@ -1,71 +1,67 @@
 {
     "hero": {
         "title": "Hi! Ich bin ",
-        "subtitle": "Full Stack Entwickler mit Fokus auf PHP/Laravel und JavaScript/TypeScript"
+        "subtitle": "Full-Stack-Entwickler mit Fokus auf Laravel, Filament, Vue und React"
     },
     "about": {
-        "title": "Persönliche Informationen",
-        "description": "Ich bin ein Full Stack Entwickler mit Erfahrung in der Entwicklung von Webanwendungen mit PHP/Laravel und JavaScript/TypeScript. Derzeit arbeite als Software Engineer bei <link>Johnny Bytes GmbH.</link>",
+        "description": "Full-Stack-Entwickler mit über drei Jahren Praxiserfahrung in der Entwicklung und Wartung von Webanwendungen, seit 2025 in Festanstellung bei der <link>Johnny\u00a0Bytes\u00a0GmbH</link>. Schwerpunkt im Backend auf Laravel und Filament, im Frontend auf Vue und React. B.Sc. Wirtschaftsinformatik (FH Aachen).",
         "location": "Erkelenz, Deutschland",
         "nav": "Über mich",
         "position": "Software Engineer"
     },
     "experience": {
-        "title": "Mein beruflicher Werdegang",
         "nav": "Erfahrung",
         "jb_fulltime": {
-            "title": "Software Engineer/ Full Stack Entwickler",
-            "company": "Johnny Bytes GmbH (Köln, DE)",
+            "title": "Software\u00a0Engineer / Full-Stack-Entwickler",
+            "company": "Johnny\u00a0Bytes\u00a0GmbH (Köln, DE)",
             "start": "seit Juli 2025",
             "tasks": {
-                "task_1": "Wartung und Pflege bestehender Systeme im Backend (Laravel) und Frontend (Vue, Blade, JQuery, SCSS)",
-                "task_2": "Entwicklung von Backend-Systemen und Admin-Panels (Laravel, Filament)"
+                "task_1": "Entwicklung von Admin-Dashboards mit Laravel und Filament für verschiedene Kunden",
+                "task_2": "Konzeption und Umsetzung neuer Features sowie technischer Optimierungen",
+                "task_3": "Entwicklung von REST-APIs und automatisierten Tests (PHPUnit, Pest) in einem agilen Team; CI/CD mit GitHub\u00a0Actions, Bitbucket\u00a0Pipelines und Envoyer",
+                "task_4": "Weiterentwicklung und Wartung von Bestandssystemen im Backend (Laravel) und Frontend (Vue, Blade, jQuery, SCSS)"
             },
             "technologies": [
                 "Laravel",
+                "Filament",
                 "Vue",
                 "Blade",
-                "JQuery",
+                "jQuery",
                 "SCSS",
-                "Filament"
+                "PHPUnit",
+                "Pest"
             ]
         },
         "jb": {
-            "title": "Werkstudent Software Engineer/ Full Stack Entwickler",
-            "company": "Johnny Bytes GmbH (Köln, DE)",
-            "start": "September 2023 - Juli 2025",
+            "title": "Werkstudent – Software\u00a0Engineer / Full-Stack-Entwicklung",
+            "company": "Johnny\u00a0Bytes\u00a0GmbH (Köln, DE)",
+            "start": "April 2023 – Juni 2025",
             "tasks": {
-                "task_1": "Wartung und Pflege bestehender Systeme im Backend (Laravel) und Frontend (Vue, Blade, JQuery, SCSS)",
-                "task_2": "Entwicklung von Backend-Systemen und Admin-Panels (Laravel, Filament)"
+                "task_1": "Wartung und Weiterentwicklung von Bestandssystemen (Laravel, Vue) sowie Entwicklung von Admin-Panels mit Filament"
             },
             "technologies": [
                 "Laravel",
                 "Vue",
-                "Blade",
-                "JQuery",
-                "SCSS",
                 "Filament"
             ]
         },
         "rbl": {
-            "title": "Werkstudent DOOH IT & Administration",
-            "company": "RBL Media GmbH (Erkelenz, DE)",
-            "start": "Oktober 2021 - September 2023",
+            "title": "Werkstudent – DOOH IT & Administration",
+            "company": "RBL\u00a0Media\u00a0GmbH (Erkelenz, DE)",
+            "start": "Juni 2021 – März 2023",
             "tasks": {
-                "task_1": "Sicherstellung des Betriebs bestehender Digitaler Außenwerbeflächen",
-                "task_2": "Support bei Errichtung neuer Werbeflächen",
-                "task_3": "Entwicklung eines Backends zur Integration von MoWaS Warnmeldungen"
+                "task_1": "Anbindung digitaler Außenwerbeflächen als Warnmultiplikator an MoWaS (Modulares Warnsystem des Bundes): Node.js-Backend, das Warnmeldungen per Koordinaten und Gebietscode den Standorten zuordnet und an die Broadsign-Player per API ausliefert",
+                "task_2": "Betrieb und Überwachung der digitalen Außenwerbeflächen (DOOH), u.\u00a0a. mit Raspberry\u00a0Pi vor Ort"
             }
         }
     },
     "education": {
-        "title": "Meine Ausbildung",
         "nav": "Bildung",
         "bachelor": {
             "title": "Studium der Wirtschaftsinformatik (Bachelor of Science)",
-            "school": "FH Aachen - University of Applied Sciences",
-            "graduation": "Juni 2025",
-            "thesis": "Abschlussarbeit: \"Konzeption und Realisierung einer skalierbaren Integrations- und Transformationsarchitektur für digitales Marketing\""
+            "school": "FH\u00a0Aachen – University of Applied Sciences",
+            "graduation": "September 2019 – Juni 2025",
+            "thesis": "Abschlussarbeit: „Konzeption und Realisierung einer skalierbaren Integrations- und Transformationsarchitektur für digitales Marketing“"
         },
         "highschool": {
             "title": "Abitur",
@@ -75,63 +71,55 @@
         }
     },
     "skills": {
-        "title": "Meine Fähigkeiten",
-        "backend": "Backend Entwicklung",
-        "frontend": "Frontend Entwicklung",
-        "others": "Weitere Technologien",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "all": "Alle",
+        "testing": "Testing",
+        "devops": "DevOps & Hosting",
         "languages": "Sprachen",
         "nav": "Kenntnisse",
         "languageBadges": {
             "german": "Deutsch (Muttersprache)",
-            "english": "Englisch (fließend)"
-        }
-    },
-    "interests": {
-        "title": "Was mich begeistert",
-        "nav": "Interessen",
-        "items": {
-            "code": {
-                "title": "Programmieren",
-                "description": "Entwicklung von Webanwendungen und Erlernen neuer Technologien."
-            },
-            "basketball": {
-                "title": "Basketball",
-                "description": "Seit mehr als 10 Jahren aktiv im lokalen Verein."
-            },
-            "reading": {
-                "title": "Lesen",
-                "description": "Bücher über Science-Fiction, Fantasy oder was mir gerade so gefällt."
-            },
-            "gaming": {
-                "title": "Videospiele",
-                "description": "Kompetitive Online-Games oder entspannte Aufbauspiele."
-            }
+            "english": "Englisch (fließend, C1)"
         }
     },
     "projects": {
-        "title": "Meine Arbeit",
+        "carousel": {
+            "slide": "{current} von {total}",
+            "prev": "Vorheriges Projekt",
+            "next": "Nächstes Projekt"
+        },
         "nav": "Projekte",
         "kg": {
-            "title": "Arbeitsplan für Karnevalsgesellschaft",
-            "description": "Konzeption und Realisierung einer Platform zur Organisation von Arbeitsplänen"
+            "meta": "KG Knallköpp Golkrath e.V.",
+            "screenshots": {
+                "arbeitsplan": "Arbeitsplan: Liste kommender Veranstaltungen mit freien Helferplätzen",
+                "sessionsplan": "Sessionsplan: öffentlicher Kalender der Termine der Session"
+            },
+            "title": "KG-Plattform",
+            "description": "Drei Web-Apps für einen Karnevalsverein: Helferanmeldung (über 300\u00a0Plätze in 2026/27), öffentlicher Veranstaltungskalender und Live-Ablauftafel."
         },
         "cbis": {
-            "title": "CBIS Projekt - Billsplit",
-            "description": "Entwicklung einer Fullstack App zum Hochladen und Aufteilen von Rechnungen im Rahmen der Veranstaltung \"Cloud-basierte Informationssysteme\""
+            "title": "CBIS Projekt – Billsplit",
+            "description": "Fullstack-App zum Hochladen und Aufteilen von Rechnungen, entstanden im Studium."
         },
         "mowas": {
             "title": "MoWaS Integration",
-            "description": "Entwicklung eines Backends zur Integration von MoWaS Warnmeldungen für digitale Außenwerbeflächen",
-            "paragraph": "Abgeschlossen während der Tätigkeit bei RBL Media GmbH"
+            "description": "Bringt Warnmeldungen des Bundes (MoWaS) auf digitale Außenwerbeflächen.",
+            "paragraph": "Abgeschlossen während der Tätigkeit bei RBL\u00a0Media\u00a0GmbH"
         },
         "personal": {
+            "screenshot": "Startseite dieser Website mit Begrüßung, Kontakt-Buttons und Porträtfoto",
             "title": "Persönliche Website",
-            "description": "Konzeption, Design und Entwicklung meiner persönlichen Portfolio-Website."
+            "description": "Konzeption, Design und Entwicklung dieser Website."
         }
     },
     "footer": {
         "made_with": "Made with",
         "love": "Liebe"
+    },
+    "header": {
+        "toggleTheme": "Farbschema wechseln"
     },
     "skipToContent": "Zum Hauptinhalt springen",
     "heartrate": {

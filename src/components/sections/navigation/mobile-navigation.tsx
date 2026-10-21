@@ -23,8 +23,8 @@ const MobileNavigation: React.FC<NavigationProps> = ({ items }) => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-          aria-label="Menü öffnen"
+          className="size-10 md:hidden focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Menu"
         >
           <Menu className="h-5 w-5" />
         </Button>

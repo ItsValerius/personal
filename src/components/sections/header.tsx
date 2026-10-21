@@ -1,12 +1,14 @@
 "use client";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { LanguageToggle } from "../language-toggle";
 import MobileNavigation from "./navigation/mobile-navigation";
 import { Button } from "../ui/button";
 import Navigation from "./navigation/desktop-navigation";
 const Header = () => {
+  const t = useTranslations("header");
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = React.useCallback(() => {
@@ -15,11 +17,10 @@ const Header = () => {
 
   const navItems = [
     "about",
-    "experience",
-    "education",
-    "skills",
-    "interests",
     "projects",
+    "experience",
+    "skills",
+    "education",
   ];
 
   return (
@@ -33,12 +34,12 @@ const Header = () => {
           <LanguageToggle />
           <Button
             variant="ghost"
-            className={"group/toggle h-8 w-8 px-0 cursor-pointer"}
+            className="size-10 cursor-pointer"
             onClick={toggleTheme}
           >
             <SunIcon className="hidden [html.dark_&]:block" />
             <MoonIcon className="hidden [html.light_&]:block" />
-            <span className="sr-only">Toggle theme</span>
+            <span className="sr-only">{t("toggleTheme")}</span>
           </Button>
         </div>
         <MobileNavigation items={navItems} />

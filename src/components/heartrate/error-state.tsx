@@ -24,7 +24,7 @@ export function ErrorState({ error, onRetry }: ErrorStateProps) {
         <CardContent className="flex flex-col items-center gap-4 py-6">
           <AlertCircle className="h-12 w-12 text-destructive" />
           <div className="text-center">
-            <h3 className="text-lg font-semibold mb-1">{t("title")}</h3>
+            <h1 className="text-lg font-semibold mb-1">{t("title")}</h1>
             <p className="text-sm text-muted-foreground mb-2">{error.message}</p>
             {onRetry && (
               <Button

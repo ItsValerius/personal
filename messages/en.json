@@ -1,71 +1,67 @@
 {
     "hero": {
         "title": "Hi! I am ",
-        "subtitle": "Full stack developer focused on PHP/Laravel and JavaScript/TypeScript"
+        "subtitle": "Full stack developer focused on Laravel, Filament, Vue and React"
     },
     "about": {
-        "title": "Personal Information",
-        "description": "I'm a full stack developer with experience in building web applications using PHP/Laravel and JavaScript/TypeScript. I'm currently working as a Software Engineer at <link>Johnny Bytes GmbH.</link>",
+        "description": "Full stack developer with over three years of hands-on experience building and maintaining web applications, employed full-time at <link>Johnny\u00a0Bytes\u00a0GmbH</link> since 2025. Backend focus on Laravel and Filament, frontend focus on Vue and React. B.Sc. in Business Informatics (FH Aachen).",
         "location": "Erkelenz, Germany",
         "nav": "About Me",
         "position": "Software Engineer"
     },
     "experience": {
-        "title": "My Professional Experience",
         "nav": "Experience",
         "jb_fulltime": {
-            "title": "Software Engineer / Full Stack Developer",
-            "company": "Johnny Bytes GmbH (Cologne, DE)",
+            "title": "Software\u00a0Engineer / Full\u00a0Stack Developer",
+            "company": "Johnny\u00a0Bytes\u00a0GmbH (Cologne, DE)",
             "start": "since July 2025",
             "tasks": [
-                "Maintenance and upkeep of existing backend (Laravel) and frontend (Vue, Blade, JQuery, SCSS) systems",
-                "Development of backend systems and admin panels (Laravel, Filament)"
+                "Built admin dashboards with Laravel and Filament for various clients",
+                "Designed and implemented new features and technical optimizations",
+                "Developed REST APIs and automated tests (PHPUnit, Pest) in an agile team; CI/CD with GitHub\u00a0Actions, Bitbucket\u00a0Pipelines and Envoyer",
+                "Maintained and extended existing backend (Laravel) and frontend (Vue, Blade, jQuery, SCSS) systems"
             ],
             "technologies": [
                 "Laravel",
+                "Filament",
                 "Vue",
                 "Blade",
-                "JQuery",
+                "jQuery",
                 "SCSS",
-                "Filament"
+                "PHPUnit",
+                "Pest"
             ]
         },
         "jb": {
-            "title": "Working Student Software Engineer / Full Stack Developer",
-            "company": "Johnny Bytes GmbH (Cologne, DE)",
-            "start": "September 2023 - July 2025",
+            "title": "Working Student – Software\u00a0Engineer / Full\u00a0Stack Development",
+            "company": "Johnny\u00a0Bytes\u00a0GmbH (Cologne, DE)",
+            "start": "April 2023 – June 2025",
             "tasks": [
-                "Maintenance and upkeep of existing backend (Laravel) and frontend (Vue, Blade, JQuery, SCSS) systems",
-                "Development of backend systems and admin panels (Laravel, Filament)"
+                "Maintained and extended existing systems (Laravel, Vue) and built admin panels with Filament"
             ],
             "technologies": [
                 "Laravel",
                 "Vue",
-                "Blade",
-                "JQuery",
-                "SCSS",
                 "Filament"
             ]
         },
         "rbl": {
-            "title": "Working Student DOOH IT & Administration",
-            "company": "RBL Media GmbH (Erkelenz, DE)",
-            "start": "October 2021 - September 2023",
+            "title": "Working Student – DOOH IT & Administration",
+            "company": "RBL\u00a0Media\u00a0GmbH (Erkelenz, DE)",
+            "start": "June 2021 – March 2023",
             "tasks": [
-                "Ensuring operation of existing digital outdoor advertising displays",
-                "Support in setting up new advertising spaces",
-                "Developed a backend to integrate MoWaS warning messages"
+                "Connected digital outdoor advertising displays to MoWaS (the German federal modular warning system) as a warning multiplier: Node.js backend that maps warnings to locations via coordinates and area codes and delivers them to Broadsign players via API",
+                "Operated and monitored the digital outdoor advertising displays (DOOH), including on-site Raspberry\u00a0Pis"
             ]
         }
     },
     "education": {
-        "title": "My Education",
         "nav": "Education",
         "bachelor": {
             "title": "Bachelor's in Business Informatics (B.Sc.)",
-            "school": "FH Aachen - University of Applied Sciences",
-            "graduation": "June 2025",
-            "thesis": "Thesis: \"Design and implementation of a scalable integration and transformation architecture for digital marketing\""
+            "school": "FH\u00a0Aachen – University of Applied Sciences",
+            "graduation": "September 2019 – June 2025",
+            "thesis": "Thesis: “Design and implementation of a scalable integration and transformation architecture for digital marketing”"
         },
         "highschool": {
             "title": "High School Diploma",
@@ -75,63 +71,55 @@
         }
     },
     "skills": {
-        "title": "My Skills",
         "nav": "Skills",
-        "backend": "Backend Development",
-        "frontend": "Frontend Development",
-        "others": "Other Technologies",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "all": "All",
+        "testing": "Testing",
+        "devops": "DevOps & Hosting",
         "languages": "Languages",
         "languageBadges": {
             "german": "German (native)",
-            "english": "English (fluent)"
-        }
-    },
-    "interests": {
-        "title": "What I'm passionate about",
-        "nav": "Interests",
-        "items": {
-            "code": {
-                "title": "Coding",
-                "description": "Building web applications and learning new technologies."
-            },
-            "basketball": {
-                "title": "Basketball",
-                "description": "Active in local team for over 10 years."
-            },
-            "reading": {
-                "title": "Reading",
-                "description": "Books on sci-fi, fantasy, or whatever I find interesting at the moment."
-            },
-            "gaming": {
-                "title": "Video Games",
-                "description": "Competitive online games or chill base building strategy games."
-            }
+            "english": "English (fluent, C1)"
         }
     },
     "projects": {
-        "title": "My Work",
+        "carousel": {
+            "slide": "{current} of {total}",
+            "prev": "Previous project",
+            "next": "Next project"
+        },
         "nav": "Projects",
         "kg": {
-            "title": "Work Plan for Carnival Club",
-            "description": "Planning and implementation of a platform for organizing shift schedules"
+            "meta": "KG Knallköpp Golkrath e.V.",
+            "screenshots": {
+                "arbeitsplan": "Arbeitsplan: list of upcoming club events with free volunteer slots",
+                "sessionsplan": "Sessionsplan: public calendar of carnival season events"
+            },
+            "title": "KG Platform",
+            "description": "Three web apps for a carnival club: volunteer sign-up (300+\u00a0slots in 2026/27), a public event calendar and a live running-order board."
         },
         "cbis": {
-            "title": "CBIS Project - Billsplit",
-            "description": "Developed a fullstack app to upload and split bills as part of the course \"Cloud-based Information Systems\""
+            "title": "CBIS Project – Billsplit",
+            "description": "Full-stack app to upload and split bills, built for a university course."
         },
         "mowas": {
             "title": "MoWaS Integration",
-            "description": "Backend for integrating MoWaS warning messages into digital outdoor displays",
-            "paragraph": "Finished during time at RBL Media GmbH"
+            "description": "Puts federal emergency warnings (MoWaS) on digital outdoor advertising screens.",
+            "paragraph": "Finished during time at RBL\u00a0Media\u00a0GmbH"
         },
         "personal": {
+            "screenshot": "Start page of this website with greeting, contact buttons and portrait photo",
             "title": "Personal Website",
-            "description": "Conception, design and development of my personal portfolio website"
+            "description": "Design and development of this website."
         }
     },
     "footer": {
         "made_with": "Made with",
         "love": "love"
+    },
+    "header": {
+        "toggleTheme": "Toggle theme"
     },
     "skipToContent": "Skip to main content",
     "heartrate": {

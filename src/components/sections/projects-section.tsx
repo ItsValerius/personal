@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Badge } from "../ui/badge";
-import ProjectCard from "./projectes/project-card";
+import ProjectCarousel from "./projectes/project-carousel";
 
 const ProjectsSection = () => {
   const t = useTranslations("projects");
@@ -10,83 +9,70 @@ const ProjectsSection = () => {
       className="scroll-mt-20"
       aria-labelledby="projects-heading"
     >
-      <div className="space-y-6">
-        <div className="space-y-2">
-          <Badge variant="outline" className="text-sm font-medium">
-            {t("nav")}
-          </Badge>
-          <h2
-            id="projects-heading"
-            className="text-3xl font-bold tracking-tight"
-          >
-            {t("title")}
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ProjectCard
-            title={t("kg.title")}
-            description={t("kg.description")}
-            technologies={[
-              "Next.js",
-              "Tailwindcss",
-              "Drizzle",
-              "Postgres",
-              "Auth.js",
-              "Shadcn/ui",
-            ]}
-            links={[
+      <ProjectCarousel
+        heading={t("nav")}
+        headingId="projects-heading"
+        projects={[
+          {
+            title: t("kg.title"),
+            meta: t("kg.meta"),
+            description: t("kg.description"),
+            technologies: ["Next.js", "TypeScript", "Drizzle", "Postgres"],
+            links: [
               {
-                text: "Github",
-                url: "https://github.com/ItsValerius/kg-work-plan",
-              },
-              {
-                text: "Website",
+                text: "Arbeitsplan",
                 url: "https://arbeitsplan.knallkoepp-golkrath.de/",
               },
-            ]}
-          />
-          <ProjectCard
-            title={t("cbis.title")}
-            description={t("cbis.description")}
-            technologies={[
-              "Next.js",
-              "Tailwindcss",
-              "Drizzle",
-              "Postgres",
-              "Auth.js",
-              "Shadcn/ui",
-              "Redis",
-            ]}
-            links={[
               {
-                text: "Github",
-                url: "https://github.com/ItsValerius/cbis",
-              },
-            ]}
-          />
-          <ProjectCard
-            title={t("personal.title")}
-            description={t("personal.description")}
-            technologies={["Next.js", "Tailwindcss", "Shadcn/ui"]}
-            links={[
-              {
-                text: "Github",
-                url: "https://github.com/ItsValerius/personal",
+                text: "Sessionsplan",
+                url: "https://sessionsplan.knallkoepp-golkrath.de/",
               },
               {
-                text: "Website",
-                url: "https://kueck.me/",
+                text: "Biwak",
+                url: "https://biwak.knallkoepp-golkrath.de/",
               },
-            ]}
-          />
-          <ProjectCard
-            title={t("mowas.title")}
-            description={t("mowas.description")}
-            technologies={["Backend", "Integration", "Warnmeldungen", "DOOH"]}
-            additionalParagraph={t("mowas.paragraph")}
-          />
-        </div>
-      </div>
+            ],
+            repo: "https://github.com/ItsValerius/kg-work-plan",
+            screenshots: [
+              {
+                src: "/projects/arbeitsplan.png",
+                alt: t("kg.screenshots.arbeitsplan"),
+              },
+              {
+                src: "/projects/sessionsplan.png",
+                alt: t("kg.screenshots.sessionsplan"),
+              },
+            ],
+          },
+          {
+            title: t("mowas.title"),
+            meta: t("mowas.paragraph"),
+            description: t("mowas.description"),
+            technologies: ["Node.js", "REST-APIs", "Broadsign", "DOOH"],
+            cover: "MoWaS",
+          },
+          {
+            title: t("cbis.title"),
+            description: t("cbis.description"),
+            technologies: ["Next.js", "Tailwind CSS", "Drizzle", "Postgres"],
+            repo: "https://github.com/ItsValerius/cbis",
+            cover: "Billsplit",
+          },
+          {
+            title: t("personal.title"),
+            description: t("personal.description"),
+            technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
+            links: [{ text: "Website", url: "https://kueck.me/" }],
+            repo: "https://github.com/ItsValerius/personal",
+            screenshots: [
+              {
+                src: "/projects/personal.png",
+                alt: t("personal.screenshot"),
+              },
+            ],
+          },
+        ]}
+      />
     </section>
   );
 };

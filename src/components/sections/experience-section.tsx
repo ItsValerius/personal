@@ -1,5 +1,4 @@
 // ExperienceSection.jsx
-import { Badge } from "@/components/ui/badge";
 import { useMessages, useTranslations } from "next-intl";
 
 import ExperienceItem from "./experience/experience-item";
@@ -13,18 +12,18 @@ const ExperienceSection = () => {
     {
       title: t("jb_fulltime.title"),
       start: t("jb_fulltime.start"),
-      company: t("jb_fulltime.title"),
-      tasks: Object.keys(messages.experience.jb.tasks).map((task) =>
+      company: t("jb_fulltime.company"),
+      tasks: Object.keys(messages.experience.jb_fulltime.tasks).map((task) =>
         t(`jb_fulltime.tasks.${task}`)
       ),
-      technologies: Object.keys(messages.experience.jb.technologies).map(
+      technologies: Object.keys(messages.experience.jb_fulltime.technologies).map(
         (technology) => t(`jb_fulltime.technologies.${technology}`)
       ),
     },
     {
       title: t("jb.title"),
       start: t("jb.start"),
-      company: t("jb.title"),
+      company: t("jb.company"),
       tasks: Object.keys(messages.experience.jb.tasks).map((task) =>
         t(`jb.tasks.${task}`)
       ),
@@ -49,17 +48,12 @@ const ExperienceSection = () => {
       aria-labelledby="experience-heading"
     >
       <div className="space-y-6">
-        <div className="space-y-2">
-          <Badge variant="outline" className="text-sm font-medium">
-            {t("nav")}
-          </Badge>
-          <h2
-            id="experience-heading"
-            className="text-3xl font-bold tracking-tight"
-          >
-            {t("title")}
-          </h2>
-        </div>
+        <h2
+          id="experience-heading"
+          className="text-3xl font-bold tracking-tight"
+        >
+          {t("nav")}
+        </h2>
 
         <div className="space-y-8">
           {jobs.map((job, idx) => (

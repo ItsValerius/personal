@@ -30,10 +30,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
         </div>
 
         {/* Company name (optional if you need it) */}
-        {company && <p className="text-lg text-primary">{company}</p>}
+        {company && <p className="text-lg font-medium text-primary">{company}</p>}
 
         {/* Tasks list */}
-        <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+        <ul className="max-w-[60ch] list-disc pl-5 text-muted-foreground space-y-1">
           {tasks.map((task, idx) => (
             <li key={idx}>{task}</li>
           ))}
@@ -41,16 +41,13 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 
         {/* Technologies badges */}
         {technologies.length > 0 && (
-          <div
-            className="flex flex-wrap gap-2 pt-2"
-            aria-label="Verwendete Technologien"
-          >
+<ul className="pt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium">
             {technologies.map((tech) => (
-              <Badge key={tech} variant="outline">
+              <li key={tech} className="whitespace-nowrap">
                 {tech}
-              </Badge>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
     </div>
