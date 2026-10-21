@@ -1,39 +1,31 @@
-import React, { ReactNode } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useId } from "react";
 import { Badge } from "@/components/ui/badge";
 
 interface SkillCardProps {
-  icon: ReactNode;
   title: string;
   skills: string[];
-  ariaLabel?: string;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({
-  icon,
   title,
   skills,
-  ariaLabel = "Technologien",
 }) => {
+  const headingId = useId();
   return (
-    <Card>
-      <CardContent className="pt-6">
-        <div className="flex flex-col space-y-4">
-          <div className="flex items-center justify-center">{icon}</div>
-          <h3 className="text-xl font-bold text-center">{title}</h3>
-          <div
-            className="flex flex-wrap gap-2 justify-center"
-            aria-label={ariaLabel}
-          >
-            {skills.map((skill) => (
-              <Badge key={skill} className="px-3 py-1">
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="border-t-2 border-primary pt-4 space-y-4">
+      <h3 id={headingId} className="text-lg font-semibold">
+        {title}
+      </h3>
+      <ul className="flex flex-wrap gap-2" aria-labelledby={headingId}>
+        {skills.map((skill) => (
+          <li key={skill}>
+            <Badge variant="secondary" className="px-2.5 py-1 text-sm font-normal">
+              {skill}
+            </Badge>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

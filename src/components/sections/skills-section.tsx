@@ -1,5 +1,3 @@
-import { Badge } from "@/components/ui/badge";
-import { Code, Languages } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SkillCard from "./skills/skill-card";
 
@@ -8,21 +6,21 @@ const SkillsSection = () => {
 
   const skills = [
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "backend",
       skills: [
         "PHP",
         "Laravel",
         "Filament",
         "Node.js",
+        "REST-APIs",
         "MySQL",
         "PostgreSQL",
+        "SQLite",
+        "Drizzle ORM",
         "Redis",
       ],
-      ariaLabel: "Backend Technologien",
     },
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "frontend",
       skills: [
         "JavaScript",
@@ -30,23 +28,31 @@ const SkillsSection = () => {
         "Vue",
         "React",
         "Next.js",
+        "Blade",
+        "jQuery",
         "CSS",
-        "Tailwind",
+        "Tailwind CSS",
         "SCSS",
       ],
-      ariaLabel: "Frontend Technologien",
     },
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "others",
-      skills: ["Docker", "Git"],
-      ariaLabel: "Weitere Technologien",
+      skills: [
+        "Docker",
+        "Git",
+        "AWS",
+        "GitHub Actions",
+        "Bitbucket Pipelines",
+        "Envoyer",
+        "Vercel",
+        "PHPUnit",
+        "Pest",
+        "Vitest",
+      ],
     },
     {
-      icon: <Languages className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "languages",
       skills: [t("languageBadges.german"), t("languageBadges.english")],
-      ariaLabel: "Sprachkenntnisse",
     },
   ];
 
@@ -57,22 +63,15 @@ const SkillsSection = () => {
       aria-labelledby="skills-heading"
     >
       <div className="space-y-6">
-        <div className="space-y-2">
-          <Badge variant="outline" className="text-sm font-medium">
-            {t("nav")}
-          </Badge>
-          <h2 id="skills-heading" className="text-3xl font-bold tracking-tight">
-            {t("title")}
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <h2 id="skills-heading" className="text-3xl font-bold tracking-tight">
+          {t("nav")}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {skills.map((item, index) => (
             <SkillCard
               key={index}
-              icon={item.icon}
               title={t(item.titleKey)}
               skills={item.skills}
-              ariaLabel={item.ariaLabel}
             />
           ))}
         </div>

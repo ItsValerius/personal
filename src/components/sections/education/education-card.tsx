@@ -23,10 +23,10 @@ const EducationCard: React.FC<EducationCardProps> = ({
 }) => {
   return (
     <Card>
-      <CardContent className="pt-6">
+      <CardContent>
         <div className="flex flex-col space-y-4">
           <div className="flex items-start gap-4">
-            <GraduationCap className="h-10 w-10 text-primary" />
+            <GraduationCap className="h-10 w-10 text-primary" aria-hidden="true" />
             <div>
               <h3 className="text-xl font-bold">{title}</h3>
               <p className="text-primary">{school}</p>

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import EducationCard from "./education/education-card";
 
@@ -12,8 +11,12 @@ const EducationSection = () => {
       aria-labelledby="education-heading"
     >
       <div className="space-y-6">
-        <Badge variant="outline">{t("nav")}</Badge>
-        <h2 className="text-3xl font-bold tracking-tight">{t("title")}</h2>
+        <h2
+          id="education-heading"
+          className="text-3xl font-bold tracking-tight"
+        >
+          {t("nav")}
+        </h2>
         {education.map((eduKey) => (
           <EducationCard
             eduKey={eduKey}

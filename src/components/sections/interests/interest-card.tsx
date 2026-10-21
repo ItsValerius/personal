@@ -1,10 +1,9 @@
 import React, { ReactNode } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface InterestCardProps {
   icon: ReactNode;
   title: string;
-  description: string;
+  description: ReactNode;
 }
 
 const InterestCard: React.FC<InterestCardProps> = ({
@@ -13,15 +12,15 @@ const InterestCard: React.FC<InterestCardProps> = ({
   description,
 }) => {
   return (
-    <Card>
-      <CardContent className="pt-6 flex flex-col items-center text-center">
-        <div className="space-y-4">
-          <div className="flex justify-center items-center">{icon}</div>
-          <h3 className="text-xl font-bold">{title}</h3>
-          <p className="text-muted-foreground">{description}</p>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="flex gap-4">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary">
+        {icon}
+      </div>
+      <div className="space-y-1">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="text-muted-foreground text-balance">{description}</p>
+      </div>
+    </div>
   );
 };
 

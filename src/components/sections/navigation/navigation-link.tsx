@@ -23,7 +23,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({ item, onClick }) => {
     <Link
       href={href}
       onClick={onClick}
-      className="text-sm font-medium hover:text-primary transition-colors
+      className="py-2 text-sm font-medium hover:text-primary transition-colors
                focus-visible:outline-none focus-visible:ring-2
                focus-visible:ring-primary focus-visible:ring-offset-2"
     >

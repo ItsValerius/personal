@@ -14,13 +14,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed">
-      <a href="#about" className="skip-to-content">
-        {t("about.nav")}
+      <a href="#main-content" className="skip-to-content">
+        {t("skipToContent")}
       </a>
       <Header />
 
       <main
-        className="container py-10 space-y-20 mx-auto px-2"
+        className="container py-10 space-y-24 mx-auto px-4"
         id="main-content"
       >
         {/* Hero Section */}
@@ -28,20 +28,21 @@ export default function Home() {
 
         {/* About Section */}
         <AboutSection />
+
+        {/* Projects Section */}
+        <ProjectsSection />
+
         {/* Experience Section */}
         <ExperienceSection />
-
-        {/* Education Section */}
-        <EducationSection />
 
         {/* Skills Section */}
         <SkillsSection />
 
+        {/* Education Section */}
+        <EducationSection />
+
         {/* Interests Section */}
         <InterestsSection />
-
-        {/* Projects Section */}
-        <ProjectsSection />
       </main>
 
       {/* Footer */}
