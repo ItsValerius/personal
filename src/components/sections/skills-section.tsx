@@ -1,52 +1,59 @@
-import { Badge } from "@/components/ui/badge";
-import { Code, Languages } from "lucide-react";
-import { useTranslations } from "next-intl";
-import SkillCard from "./skills/skill-card";
+import { useLocale, useTranslations } from "next-intl";
+import SkillField from "./skills/skill-field";
 
 const SkillsSection = () => {
   const t = useTranslations("skills");
+  const locale = useLocale();
 
+  // core = the focus named in the hero line, set large in the field
   const skills = [
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "backend",
+      core: ["Laravel", "Filament"],
       skills: [
         "PHP",
-        "Laravel",
-        "Filament",
         "Node.js",
+        "REST-APIs",
         "MySQL",
         "PostgreSQL",
+        "SQLite",
+        "Drizzle ORM",
         "Redis",
       ],
-      ariaLabel: "Backend Technologien",
     },
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
       titleKey: "frontend",
+      core: ["Vue", "React"],
       skills: [
-        "JavaScript",
         "TypeScript",
-        "Vue",
-        "React",
+        "JavaScript",
         "Next.js",
+        "Blade",
+        "jQuery",
+        "Tailwind CSS",
         "CSS",
-        "Tailwind",
         "SCSS",
       ],
-      ariaLabel: "Frontend Technologien",
     },
     {
-      icon: <Code className="h-10 w-10 text-primary" aria-hidden="true" />,
-      titleKey: "others",
-      skills: ["Docker", "Git"],
-      ariaLabel: "Weitere Technologien",
+      titleKey: "testing",
+      skills: ["PHPUnit", "Pest", "Vitest"],
     },
     {
-      icon: <Languages className="h-10 w-10 text-primary" aria-hidden="true" />,
+      titleKey: "devops",
+      skills: [
+        "Git",
+        "Docker",
+        "GitHub Actions",
+        "Bitbucket Pipelines",
+        "Envoyer",
+        "AWS",
+        "Vercel",
+      ],
+    },
+    {
       titleKey: "languages",
       skills: [t("languageBadges.german"), t("languageBadges.english")],
-      ariaLabel: "Sprachkenntnisse",
     },
   ];
 
@@ -57,25 +64,20 @@ const SkillsSection = () => {
       aria-labelledby="skills-heading"
     >
       <div className="space-y-6">
-        <div className="space-y-2">
-          <Badge variant="outline" className="text-sm font-medium">
-            {t("nav")}
-          </Badge>
-          <h2 id="skills-heading" className="text-3xl font-bold tracking-tight">
-            {t("title")}
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((item, index) => (
-            <SkillCard
-              key={index}
-              icon={item.icon}
-              title={t(item.titleKey)}
-              skills={item.skills}
-              ariaLabel={item.ariaLabel}
-            />
-          ))}
-        </div>
+        <h2 id="skills-heading" className="text-3xl font-bold tracking-tight">
+          {t("nav")}
+        </h2>
+        <SkillField
+          // skill names differ per language, so the field rebuilds its layout on a switch
+          key={locale}
+          allLabel={t("all")}
+          groups={skills.map((item) => ({
+            key: item.titleKey,
+            title: t(item.titleKey),
+            core: item.core,
+            skills: item.skills,
+          }))}
+        />
       </div>
     </section>
   );
