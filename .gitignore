@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# inlang (generated)
+project.inlang/.gitignore
+project.inlang/.meta.json
+project.inlang/README.md
+project.inlang/cache/
