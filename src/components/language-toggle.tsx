@@ -21,10 +21,10 @@ export function LanguageToggle() {
       onClick={() => toggleLanguage(locale === "de" ? "en" : "de")}
       variant="ghost"
       lang={locale === "de" ? "en" : "de"}
-      aria-label={locale === "de" ? "English" : "Deutsch"}
+      aria-label={locale === "de" ? "EN – English" : "DE – Deutsch"}
       className={cn(
         "h-10 text-sm px-3 cursor-pointer",
-        isPending && "pointer-events-none opacity-60 cursor-none"
+        isPending && "pointer-events-none opacity-60"
       )}
       disabled={isPending}
     >

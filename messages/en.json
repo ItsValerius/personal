@@ -122,45 +122,9 @@
         "toggleTheme": "Toggle theme"
     },
     "skipToContent": "Skip to main content",
-    "heartrate": {
-        "stats": {
-            "average": "Average",
-            "maximum": "Maximum",
-            "minimum": "Minimum",
-            "dataPoints": "Data Points"
-        },
-        "chart": {
-            "title": "Heartrate History",
-            "current": "Current",
-            "time": "Time",
-            "avg": "Ø",
-            "inactive": {
-                "title": "App Inactive",
-                "description": "No new heartrate measurements have been received for more than 30 seconds."
-            }
-        },
-        "empty": {
-            "title": "No Heartrate History Yet",
-            "description": "Waiting for heartrate measurements to arrive. Once data starts coming in, you'll see a real-time graph showing your heartrate history here.",
-            "latestReading": "Latest reading"
-        },
-        "lastValue": "Last value from",
-        "note": {
-            "text": "This site might be active or not, depending on whether I have my app running."
-        },
-        "connection": {
-            "connecting": "Connecting",
-            "connected": "Connected",
-            "error": "Error",
-            "inactive": "Inactive"
-        },
-        "error": {
-            "title": "Connection Error",
-            "retry": "Retry"
-        },
-        "timeRange": {
-            "label": "Time Range",
-            "select": "Select"
-        }
+    "metadata": {
+        "title": "Website - Valentin Kück",
+        "description": "Personal Website about me.",
+        "siteName": "My Personal Website"
     }
 }

@@ -122,45 +122,9 @@
         "toggleTheme": "Farbschema wechseln"
     },
     "skipToContent": "Zum Hauptinhalt springen",
-    "heartrate": {
-        "stats": {
-            "average": "Durchschnitt",
-            "maximum": "Maximum",
-            "minimum": "Minimum",
-            "dataPoints": "Datenpunkte"
-        },
-        "chart": {
-            "title": "Herzfrequenz Verlauf",
-            "current": "Aktuell",
-            "time": "Zeit",
-            "avg": "Ø",
-            "inactive": {
-                "title": "App inaktiv",
-                "description": "Es wurden seit mehr als 30 Sekunden keine neuen Herzfrequenz-Messungen empfangen."
-            }
-        },
-        "empty": {
-            "title": "Noch keine Herzfrequenz Historie",
-            "description": "Warten auf Herzfrequenz-Messungen. Sobald Daten eintreffen, sehen Sie hier einen Echtzeit-Graphen mit Ihrem Herzfrequenz-Verlauf.",
-            "latestReading": "Letzte Messung"
-        },
-        "lastValue": "Letzter Wert vom",
-        "note": {
-            "text": "Diese Seite ist nur manchmal aktiv und liefert auch nur dann Werte, wenn meine App läuft."
-        },
-        "connection": {
-            "connecting": "Verbinde",
-            "connected": "Verbunden",
-            "error": "Fehler",
-            "inactive": "Inaktiv"
-        },
-        "error": {
-            "title": "Verbindungsfehler",
-            "retry": "Wiederholen"
-        },
-        "timeRange": {
-            "label": "Zeitraum",
-            "select": "Auswählen"
-        }
+    "metadata": {
+        "title": "Website - Valentin Kück",
+        "description": "Meine persönliche Website.",
+        "siteName": "Meine persönliche Website"
     }
 }

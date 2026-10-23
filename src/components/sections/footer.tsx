@@ -45,16 +45,11 @@ const Footer = () => {
         </ul>
         <div className="flex items-center gap-1 text-muted-foreground">
           {t("made_with")}
-          <Link
-            href="/heartrate"
-            className="p-2 -m-2 rounded-sm transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            <Heart
-              className="h-6 w-6 fill-primary stroke-primary"
-              aria-hidden="true"
-            />
-            <span className="sr-only">{t("love")}</span>
-          </Link>
+          <Heart
+            className="h-6 w-6 fill-primary stroke-primary"
+            aria-hidden="true"
+          />
+          <span className="sr-only">{t("love")}</span>
         </div>
       </div>
     </footer>

@@ -12,7 +12,8 @@ export default function Home() {
   const t = useTranslations();
 
   return (
-    <div className="min-h-screen bg-[url('/pencil-dots-colored.svg')] dark:bg-[url('/pencil-dots-colored-dark.svg')] bg-repeat bg-[length:60px_60px] bg-fixed">
+    // Fixed pseudo-element instead of bg-fixed, which repaints on every scroll in mobile Safari.
+    <div className="min-h-screen isolate before:fixed before:inset-0 before:-z-10 before:bg-[url('/pencil-dots-colored.svg')] dark:before:bg-[url('/pencil-dots-colored-dark.svg')] before:bg-repeat before:bg-[length:60px_60px]">
       <a href="#main-content" className="skip-to-content">
         {t("skipToContent")}
       </a>

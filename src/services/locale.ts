@@ -5,12 +5,16 @@ import { Locale, defaultLocale, locales } from "@/i18n/config";
 
 const COOKIE_NAME = "NEXT_LOCALE";
 
+const isLocale = (value: unknown): value is Locale =>
+  locales.includes(value as Locale);
+
 export async function getUserLocale() {
   const languageHeader = (await headers()).get("accept-language");
   const languageCookie = (await cookies()).get(COOKIE_NAME)?.value;
-  if (!languageCookie && languageHeader) {
+  if (!isLocale(languageCookie) && languageHeader) {
     const languages = languageHeader.split(",").map((lang) => {
-      const [code, qualityStr] = lang.trim().split(";");
+      const [rawCode, qualityStr] = lang.trim().split(";");
+      const code = rawCode.trim().toLowerCase();
       // Extract quality value, default to 1 if not specified
       const quality = qualityStr ? parseFloat(qualityStr.replace("q=", "")) : 1;
       return { code, quality };
@@ -19,20 +23,27 @@ export async function getUserLocale() {
     // Find the first supported language
     for (const lang of sortedLanguages) {
       // Check full locale (de-DE) first
-      if (locales.includes(lang.code as Locale)) {
-        return lang.code as Locale;
+      if (isLocale(lang.code)) {
+        return lang.code;
       }
 
       // Then check language code (de, en)
       const languageCode = lang.code.split("-")[0];
-      if (locales.includes(languageCode as Locale)) {
-        return languageCode as Locale;
+      if (isLocale(languageCode)) {
+        return languageCode;
       }
     }
   }
-  return languageCookie || defaultLocale;
+  // The cookie is client-controlled; an unknown value would fail the messages import.
+  return isLocale(languageCookie) ? languageCookie : defaultLocale;
 }
 
+// Server action: callable from any client, so the argument is untrusted.
 export async function setUserLocale(locale: Locale) {
-  (await cookies()).set(COOKIE_NAME, locale);
+  if (!isLocale(locale)) return;
+  (await cookies()).set(COOKIE_NAME, locale, {
+    path: "/",
+    sameSite: "lax",
+    maxAge: 60 * 60 * 24 * 365,
+  });
 }
